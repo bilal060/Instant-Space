@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+body {
+  margin: 0;
+  font-family: "SF Pro Display", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* font size */
+.text-45 {
+  font-size: 45px !important;
+}
+
+input[placeholder="Email"] {
+  background-color: white;
+  /* background-image: url("../public/images/icons/@.svg"); */
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[type="password"] {
+  background-color: white;
+  /* background-image: url("../public/images/icons/lock.svg"); */
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 0px 12px 40px;
+  font-size: 18px;
+}
+.eye {
+  /* background-image: url("../public/images/icons/eye.svg"); */
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 26px 1px 16px 35px;
+  font-size: 18px;
+  top: 83px;
+  right: 160px;
+}
+/* .linearGradient {
+  background-image: linear-gradient(
+      180deg,
+      rgba(23, 29, 37, 0) 0%,
+      #171d25 83.85%
+    ),
+    url("../public/images/bg1.svg") !important;
+  height: 1000px;
+  background-size: cover;
+  color: white;
+  padding: 20px;
+} */
+
+hr{
+  display: inline-block;
+  width: 44%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+span{
+  width: 100px !important;
+  display: inline-block;
+  text-align: center;
+}
+.head-border {
+  display: flex;
+  align-items: center;
+}
+
+.head-border:before,
+.head-border:after {
+  content: "";
+  height: 1px;
+  flex-grow: 1;
+  background-color: #E7E6E9;
+}
+
+.head-border:before {
+  margin-right: 0.25rem;
+}
+
+.head-border:after {
+  margin-left: 0.15rem;
+}
+@media screen and (max-width:992px) {
+  .rounded32{
+      border-radius: 32px !important;
+  }
+
+}
