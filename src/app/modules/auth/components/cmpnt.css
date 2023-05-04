@@ -44,18 +44,18 @@ input[type="password"] {
   top: 83px;
   right: 160px;
 }
-/* .linearGradient {
+.linearGradient {
   background-image: linear-gradient(
       180deg,
       rgba(23, 29, 37, 0) 0%,
       #171d25 83.85%
     ),
-    url("../public/images/bg1.svg") !important;
-  height: 1000px;
+    url("../../../../../public/media/misc/Rectangle.png") !important; 
+    height: 95%;
   background-size: cover;
   color: white;
   padding: 20px;
-} */
+}
 
 hr{
   display: inline-block;
@@ -91,7 +91,7 @@ span{
 }
 @media screen and (max-width:992px) {
   .rounded32{
-      border-radius: 32px !important;
+      border-radius: 10px !important;
   }
 
 }

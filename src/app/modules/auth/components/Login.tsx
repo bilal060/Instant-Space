@@ -71,9 +71,9 @@ export function Login() {
 
 
       <div className="row">
-        <div className="sm:pl-36 pr-10 pl-10">
+        <div className="sm:!pl-36 pr-10 pl-10">
             <Logo />
-            <div className="pt-[131px]">
+            <div className="pt-32">
               <AuthHead text1="Welcome " text2="Back!" />
               <AuthDesc desc="Login to your account" />
             </div>
@@ -84,7 +84,7 @@ export function Login() {
           placeholder='Email'
           {...formik.getFieldProps('email')}
           className={clsx(
-            'form-control w-100 border-2 border-solid !border-[#7D8695] h-[56px] rounded-lg inputText mb-4 bg-transparent',
+            'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
             {'is-invalid': formik.touched.email && formik.errors.email},
             {
               'is-valid': formik.touched.email && !formik.errors.email,
@@ -107,7 +107,7 @@ export function Login() {
           autoComplete='off'
           {...formik.getFieldProps('password')}
           className={clsx(
-            'form-control w-100 border-2 border-solid !border-[#7D8695] h-[56px] rounded-lg inputText mb-4 bg-transparent',
+            'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
             {
               'is-invalid': formik.touched.password && formik.errors.password,
             },
@@ -132,13 +132,13 @@ export function Login() {
                   </div>
               </Link>
 
-              <button className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-[56px]">
+              <button className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-14">
                 Login
               </button>
 
               <div className="head-border text-sm !text-[#7D8695] my-8">OR</div>
 
-              <button className="!text-[#171D25] !bg-[#F1F6F7] form-control !rounded-md !font-bold !text-sm h-[56px] ">
+              <button className="!text-[#171D25] !bg-[#F1F6F7] form-control !rounded-md !font-bold !text-sm h-14 ">
                 <div className="flex justify-center">
                   <div>
                   <img
@@ -154,7 +154,7 @@ export function Login() {
               </button>
 
             </div>
-            <div className="pt-8 flex justify-center pr-[140px]">
+            <div className="pt-8 flex justify-center sm:pr-[140px]">
               <Link to='register'>
                    <ButtonDesc to='registration' text1="Don’t have an account?" text2="Register"/>
               </Link>
