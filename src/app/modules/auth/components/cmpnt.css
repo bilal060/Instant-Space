@@ -21,27 +21,85 @@ code {
 
 input[placeholder="Email"] {
   background-color: white;
+  background-image: url("../../../../../public/images/icons/@.svg");
+  background-position: 10px 13px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="Company Name"] {
+  background-color: white;
   /* background-image: url("../public/images/icons/@.svg"); */
   background-position: 10px 17px;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+input[placeholder="Full Name"] {
+  background-color: white;
+  /* background-image: url("../public/images/icons/@.svg"); */
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="Number"] {
+  background-color: white;
+  /* background-image: url("../public/images/icons/@.svg"); */
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="Company License Number"] {
+  background-color: white;
+  /* background-image: url("../public/images/icons/@.svg"); */
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="Complete Address"] {
+  background-color: white;
+  /* background-image: url("../public/images/icons/@.svg"); */
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[id="dropdown"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/dropdown.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+
 input[type="password"] {
   background-color: white;
-  /* background-image: url("../public/images/icons/lock.svg"); */
-  background-position: 10px 17px;
+  background-image: url("../../../../../public/images/icons/lock.svg");
+  background-position: 10px 13px;
   background-repeat: no-repeat;
   padding: 12px 0px 12px 40px;
   font-size: 18px;
 }
 .eye {
-  /* background-image: url("../public/images/icons/eye.svg"); */
+  background-image: url("../../../../../public/images/icons/eye.svg");
   background-position: 10px 17px;
   background-repeat: no-repeat;
-  padding: 26px 1px 16px 35px;
+  padding: 26px 16px 35px;
   font-size: 18px;
-  top: 83px;
+  top: 56px;
+  right: 160px;
+}
+.eye1 {
+  background-image: url("../../../../../public/images/icons/eye.svg");
+  background-position: 10px 37px;
+  background-repeat: no-repeat;
+  padding: 26px 16px 35px;
+  font-size: 18px;
+  top: 56px;
   right: 160px;
 }
 .linearGradient {
@@ -51,7 +109,7 @@ input[type="password"] {
       #171d25 83.85%
     ),
     url("../../../../../public/media/misc/Rectangle.png") !important; 
-    height: 95%;
+    height: 100%;
   background-size: cover;
   color: white;
   padding: 20px;
@@ -94,4 +152,9 @@ span{
       border-radius: 10px !important;
   }
 
+}
+
+.stroke-border{
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%239A9AB0FF' stroke-width='4' stroke-dasharray='5%2c 24' stroke-dashoffset='41' stroke-linecap='round'/%3e%3c/svg%3e"); 
+  border-radius: 10px;
 }

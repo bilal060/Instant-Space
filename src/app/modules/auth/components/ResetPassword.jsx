@@ -1,65 +1,89 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import React from 'react'
+import {useFormik} from 'formik'
 import * as Yup from 'yup'
 import clsx from 'clsx'
+import {getUserByToken, register} from '../core/_requests'
 import {Link} from 'react-router-dom'
-import {useFormik} from 'formik'
-import {getUserByToken, login} from '../core/_requests'
 import {toAbsoluteUrl} from '../../../../_metronic/helpers'
+import {PasswordMeterComponent} from '../../../../_metronic/assets/ts/components'
 import {useAuth} from '../core/Auth'
 import Logo from './cmpnt/logo'
 import AuthHead from './cmpnt/authHead'
 import AuthDesc from './cmpnt/authDesc'
 import ButtonDesc from './cmpnt/buttonDesc'
-import "./cmpnt.css"
+import { DropDown } from './cmpnt/dropDown'
 
-const loginSchema = Yup.object().shape({
+const initialValues = {
+  firstname: '',
+  lastname: '',
+  email: '',
+  password: '',
+  changepassword: '',
+  acceptTerms: false,
+}
+
+const registrationSchema = Yup.object().shape({
+  firstname: Yup.string()
+    .min(3, 'Minimum 3 symbols')
+    .max(50, 'Maximum 50 symbols')
+    .required('First name is required'),
   email: Yup.string()
     .email('Wrong email format')
     .min(3, 'Minimum 3 symbols')
     .max(50, 'Maximum 50 symbols')
     .required('Email is required'),
+  lastname: Yup.string()
+    .min(3, 'Minimum 3 symbols')
+    .max(50, 'Maximum 50 symbols')
+    .required('Last name is required'),
   password: Yup.string()
     .min(3, 'Minimum 3 symbols')
     .max(50, 'Maximum 50 symbols')
     .required('Password is required'),
+  changepassword: Yup.string()
+    .required('Password confirmation is required')
+    .when('password', {
+      is: (val: string) => (val && val.length > 0 ? true : false),
+      then: Yup.string().oneOf([Yup.ref('password')], "Password and Confirm Password didn't match"),
+    }),
+  acceptTerms: Yup.bool().required('You must accept the terms and conditions'),
 })
 
-const initialValues = {
-  email: 'admin@demo.com',
-  password: 'demo',
-}
-
-/*
-  Formik+YUP+Typescript:
-  https://jaredpalmer.com/formik/docs/tutorial#getfieldprops
-  https://medium.com/@maurice.de.beijer/yup-validation-and-typescript-and-formik-6c342578a20e
-*/
-
-export function Login() {
+export function ResetPassword() {
   const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
-
   const formik = useFormik({
     initialValues,
-    validationSchema: loginSchema,
+    validationSchema: registrationSchema,
     onSubmit: async (values, {setStatus, setSubmitting}) => {
       setLoading(true)
       try {
-        const {data: auth} = await login(values.email, values.password)
+        const {data: auth} = await register(
+          values.email,
+          values.firstname,
+          values.lastname,
+          values.password,
+          values.changepassword
+        )
         saveAuth(auth)
         const {data: user} = await getUserByToken(auth.api_token)
         setCurrentUser(user)
       } catch (error) {
         console.error(error)
         saveAuth(undefined)
-        setStatus('The login details are incorrect')
+        setStatus('The registration details is incorrect')
         setSubmitting(false)
         setLoading(false)
       }
     },
   })
+
+  useEffect(() => {
+    PasswordMeterComponent.bootstrap()
+  }, [])
 
   return (
     <form
@@ -74,26 +98,15 @@ export function Login() {
         <div className="sm:!pl-36 pr-10 pl-10">
             <Logo />
             <div className="pt-32">
-              <AuthHead text1="Welcome " text2="Back!" />
-              <AuthDesc desc="Login to your account" />
+              <AuthHead text1="Reset " text2="Password" />
+              <AuthDesc desc="Create your new password." />
             </div>
             <div className="input sm:pr-[140px] relative">
              
       <div className='fv-row '>
-        <input
-          placeholder='Email'
-          {...formik.getFieldProps('email')}
-          className={clsx(
-            'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
-            {'is-invalid': formik.touched.email && formik.errors.email},
-            {
-              'is-valid': formik.touched.email && !formik.errors.email,
-            }
-          )}
-          type='email'
-          name='email'
-          autoComplete='off'
-        />
+
+        
+      
         {formik.touched.email && formik.errors.email && (
           <div className='fv-plugins-message-container'>
             <span role='alert'>{formik.errors.email}</span>
@@ -104,7 +117,7 @@ export function Login() {
         <div className='mb-3'>
         <input
           type='password'
-          placeholder='Password'
+          placeholder='New Password'
           autoComplete='off'
           {...formik.getFieldProps('password')}
           className={clsx(
@@ -125,46 +138,52 @@ export function Login() {
           </div>
         )}
       </div>
+
+      <div className='mb-3'>
+        <input
+          type='password'
+          placeholder='Confirm New Password'
+          autoComplete='off'
+          {...formik.getFieldProps('password')}
+          className={clsx(
+            'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
+            {
+              'is-invalid': formik.touched.password && formik.errors.password,
+            },
+            {
+              'is-valid': formik.touched.password && !formik.errors.password,
+            }
+          )}
+        />
+        {formik.touched.password && formik.errors.password && (
+          <div className='fv-plugins-message-container'>
+            <div className='fv-help-block'>
+              <span role='alert'>{formik.errors.password}</span>
+            </div>
+          </div>
+        )}
+      </div>
+
+
               <div className="eye absolute"></div>
 
-              <Link to='forgot-password'>
-                  <div className="font-bold text-[#0064FA] text-sm flex justify-end pb-8">
-                      Forgot Password?
-                  </div>
-              </Link>
+              
+              <div className='pt-10'>
+                    <button className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-14">
+                        Save
+                    </button>
+              </div>
 
-              <button className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-14">
-                Login
-              </button>
-
-              <div className="head-border text-sm !text-[#7D8695] my-8">OR</div>
-
-              <button className="!text-[#171D25] !bg-[#F1F6F7] form-control !rounded-md !font-bold !text-sm h-14 ">
-                <div className="flex justify-center">
-                  <div>
-                  <img
-                      alt='Logo'
-                      src={toAbsoluteUrl('/media/svg/brand-logos/google-icon.svg')}
-                      className='h-15px me-3'
-                  />
-                  </div>
-                  <div className=" flex items-center">
-                    <label> Login with Google</label>
-                  </div>
-                </div>
-              </button>
+             
 
             </div>
-            <div className="pt-8 flex justify-center sm:pr-[140px]">
-              <Link to='register'>
-                   <ButtonDesc to='register' text1="Don’t have an account?" text2="Register"/>
-              </Link>
-              </div>
           </div>
 
 
        
       </div>
+
+
     </form>
   )
 }

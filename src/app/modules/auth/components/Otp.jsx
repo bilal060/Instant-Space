@@ -37,7 +37,7 @@ const initialValues = {
   https://medium.com/@maurice.de.beijer/yup-validation-and-typescript-and-formik-6c342578a20e
 */
 
-export function ForgotPassword() {
+export function Otp() {
   const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
 
@@ -74,15 +74,14 @@ export function ForgotPassword() {
         <div className="sm:!pl-36 pr-10 pl-10">
             <Logo />
             <div className="pt-32">
-              <AuthHead text1="Forgot " text2="Password?" />
-              <AuthDesc desc="Don’t worry! it happens. Please enter your email address to get code." />
+              <AuthHead text1="Verify " text2="OTP" />
+              <AuthDesc desc="A 6-digit code sent to your adam*****@gmail.com." />
             </div>
             <div className="input sm:pr-[140px] relative">
              
       <div className='fv-row '>
         <input
-          placeholder='Email'
-          {...formik.getFieldProps('email')}
+          placeholder='Enter Email OTP'
           className={clsx(
             'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
             {'is-invalid': formik.touched.email && formik.errors.email},
@@ -104,18 +103,19 @@ export function ForgotPassword() {
         
               <div className="eye absolute"></div>
 
-             <Link to="otp">
+             
               <div className='pt-10'>
                     <button className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-14">
-                        Next
+                        Verify
                     </button>
-              </div>
-              </Link>
-
-
-             
+              </div>             
 
             </div>
+            <div className="pt-8 flex justify-center sm:pr-[140px]">
+              <Link to='reset'>
+                   <ButtonDesc to='register' text1="Re-send code in." text2="58s"/>
+              </Link>
+              </div>
               
           </div>
 

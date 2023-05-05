@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import React from 'react'
 import {useFormik} from 'formik'
 import * as Yup from 'yup'
@@ -14,6 +14,8 @@ import Logo from './cmpnt/logo'
 import AuthHead from './cmpnt/authHead'
 import AuthDesc from './cmpnt/authDesc'
 import ButtonDesc from './cmpnt/buttonDesc'
+import DatePicker from 'react-date-picker';
+import ButtonDesc1 from './cmpnt/buttonDesc1'
 import { DropDown } from './cmpnt/dropDown'
 
 const initialValues = {
@@ -52,7 +54,7 @@ const registrationSchema = Yup.object().shape({
   acceptTerms: Yup.bool().required('You must accept the terms and conditions'),
 })
 
-export function Registration() {
+export function CompanyInfo() {
   const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
   const formik = useFormik({
@@ -85,6 +87,12 @@ export function Registration() {
     PasswordMeterComponent.bootstrap()
   }, [])
 
+  const [date, setDate] = useState('');
+    const dateInputRef = useRef(null);
+  
+    const handleChange = (e) => {
+    setDate(e.target.value);
+    };
   return (
     <form
       className='form w-100'
@@ -98,25 +106,14 @@ export function Registration() {
         <div className="sm:!pl-36 pr-10 pl-10">
             <Logo />
             <div className="pt-32">
-              <AuthHead text1="Register " text2="Now" />
-              <AuthDesc desc="Create your new account" />
+              <AuthHead text1="Company" text2="Info" />
+              <AuthDesc desc="Enter your company’s information below." />
             </div>
             <div className="input sm:pr-[140px] relative">
              
       <div className='fv-row '>
-
-        
-      <div className="lg:mt-4 md:mt-4 sm:mt-4">
-            <DropDown
-              // className="mb-xl-8"
-              color="danger"
-              title="Select Role"
-            />
-          </div>
-
-
-        <input
-          placeholder='Email'
+      <input
+          placeholder='Company Name'
           {...formik.getFieldProps('email')}
           className={clsx(
             'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
@@ -135,66 +132,69 @@ export function Registration() {
           </div>
         )}
       </div>
+
+      <div className="lg:mt-4 md:mt-4 sm:mt-4">
+            <DropDown
+              title="Select Type"
+            />
+          </div>
              
         <div className='mb-3'>
         <input
-          type='password'
-          placeholder='Password'
+          type='number'
+          placeholder='Number'
           autoComplete='off'
-          {...formik.getFieldProps('password')}
           className={clsx(
-            'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
-            {
-              'is-invalid': formik.touched.password && formik.errors.password,
-            },
-            {
-              'is-valid': formik.touched.password && !formik.errors.password,
-            }
+            'form-control w-100 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
           )}
         />
-        {formik.touched.password && formik.errors.password && (
-          <div className='fv-plugins-message-container'>
-            <div className='fv-help-block'>
-              <span role='alert'>{formik.errors.password}</span>
-            </div>
-          </div>
-        )}
       </div>
 
-      {/* <div className="eye1 absolute"></div> */}
 
       <div className='mb-3'>
         <input
-          type='password'
-          placeholder='Confirm Password'
+          type='number'
+          placeholder='Company License Number'
           autoComplete='off'
-          {...formik.getFieldProps('password')}
           className={clsx(
             'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
-            {
-              'is-invalid': formik.touched.password && formik.errors.password,
-            },
-            {
-              'is-valid': formik.touched.password && !formik.errors.password,
-            }
           )}
         />
-        {formik.touched.password && formik.errors.password && (
-          <div className='fv-plugins-message-container'>
-            <div className='fv-help-block'>
-              <span role='alert'>{formik.errors.password}</span>
-            </div>
-          </div>
-        )}
+      </div>     
+
+
+      <div className='fv-row '>
+        <input
+          placeholder='Complete Address'
+          className={clsx(
+            'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
+          )}
+          type='email'
+          name='email'
+          autoComplete='off'
+        />
       </div>
 
 
-              
+     <div className="w-100 rounded-lg bg-[#C3D6DA] border-2 stroke-border border-[#c0d2d6] h-14">
+            <div className="flex items-center justify-between">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 items-center mx-8 mt-1 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                 </svg>
+                 <p className="w-100 text-sm text-gray-700 mt-4">
+                     Choose file/Drag & Drop Here
+                </p>
+            </div>
+          <input type="file" className="opacity-0" />
+    </div>
 
-              <Link to="personal-Info">
+
+              <div className="eye absolute"></div>
+
+              <Link to="company">
               <div className='pt-10'>
                     <button className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-14">
-                        Next
+                        Register
                     </button>
               </div>
               </Link>
@@ -203,7 +203,7 @@ export function Registration() {
             </div>
             <div className="pt-8 flex justify-center sm:pr-[140px]">
               <Link to='/'>
-                   <ButtonDesc text1="Already have an account?" text2="Login"/>
+                   <ButtonDesc1 text1="By Registering, your're agree to our," text2="Terms and Condition" text3="and" text4="Privacy Policy"/>
               </Link>
               </div>
           </div>

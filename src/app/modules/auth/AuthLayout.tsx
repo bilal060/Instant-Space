@@ -19,18 +19,18 @@ const AuthLayout = () => {
 
   return (
     
-    <div className='d-flex flex-column flex-lg-row flex-column-fluid h-100'>
+    <div className='row h-100'>
 
-      <div className='d-flex flex-column flex-lg-row-fluid w-lg-75 p-10 order-2 order-lg-1'>
+      <div className='flex flex-column col-xl-5 p-10 order-2 order-lg-1'>
         <div className='d-flex flex-column flex-lg-row-fluid'>
-          <div className='pt-14'>
+          <div>
             <Outlet />
           </div>
         </div>
       </div>
      
      
-      <div className='d-flex lg:!mt-8 lg:!mr-8 flex-lg-row-fluid w-lg-100 bgi-size-cover bgi-position-center linearGradient order-1 rounded-l-3xl rounded32 relative'
+      <div className='col-xl-7 lg:!mt-8 lg:!mr-0 bgi-size-cover bgi-position-center linearGradient order-1 rounded-l-3xl rounded32 relative'
 
       >
         <div className='d-flex flex-column py-18 px-20 w-100 absolute bottom-0'>
