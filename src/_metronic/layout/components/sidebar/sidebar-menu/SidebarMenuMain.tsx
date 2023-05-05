@@ -1,33 +1,70 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from 'react'
-import {useIntl} from 'react-intl'
-import {KTSVG} from '../../../../helpers'
-import {SidebarMenuItemWithSub} from './SidebarMenuItemWithSub'
-import {SidebarMenuItem} from './SidebarMenuItem'
+import React from 'react';
+import { useIntl } from 'react-intl';
+import { KTSVG } from '../../../../helpers';
+import { SidebarMenuItemWithSub } from './SidebarMenuItemWithSub';
+import { SidebarMenuItem } from './SidebarMenuItem';
 
 const SidebarMenuMain = () => {
-  const intl = useIntl()
+  const intl = useIntl();
 
   return (
     <>
       <SidebarMenuItem
-        to='/dashboard'
-        icon='/media/icons/duotune/art/art002.svg'
-        title={intl.formatMessage({id: 'MENU.DASHBOARD'})}
-        fontIcon='bi-app-indicator'
+        to="/Home"
+        icon="/media/icons/InstantIcons/Home.svg"
+        title="Home"
+        fontIcon="bi-app-indicator"
       />
       <SidebarMenuItem
-        to='/builder'
-        icon='/media/icons/duotune/general/gen019.svg'
-        title='Layout Builder'
-        fontIcon='bi-layers'
+        to="/my-spaces"
+        icon="/media/icons/InstantIcons/Spaces.svg"
+        title="My Spaces"
+        fontIcon="bi-app-indicator"
       />
-      <div className='menu-item'>
+      <SidebarMenuItem
+        to="/booking-management"
+        icon="/media/icons/InstantIcons/Booking.svg"
+        title="Booking Management"
+        fontIcon="bi-app-indicator"
+      />
+      <SidebarMenuItem
+        to="/my-managers"
+        icon="/media/icons/InstantIcons/Managers.svg"
+        title="My Managers"
+        fontIcon="bi-app-indicator"
+      />
+      <SidebarMenuItem
+        to="/Payment History"
+        icon="/media/icons/InstantIcons/Payment.svg"
+        title="Payment History"
+        fontIcon="bi-app-indicator"
+      />
+      <SidebarMenuItem
+        to="/Messages"
+        icon="/media/icons/InstantIcons/Messages.svg"
+        title="Messages"
+        fontIcon="bi-app-indicator"
+      />
+      <SidebarMenuItem
+        to="/dashboard"
+        icon="/media/icons/duotune/art/art002.svg"
+        title={intl.formatMessage({ id: 'MENU.DASHBOARD' })}
+        fontIcon="bi-app-indicator"
+      />
+
+      <SidebarMenuItem
+        to="/builder"
+        icon="/media/icons/duotune/general/gen019.svg"
+        title="Layout Builder"
+        fontIcon="bi-layers"
+      />
+      {/* <div className='menu-item'>
         <div className='menu-content pt-8 pb-2'>
           <span className='menu-section text-muted text-uppercase fs-8 ls-1'>Crafted</span>
         </div>
-      </div>
-      <SidebarMenuItemWithSub
+      </div> */}
+      {/* <SidebarMenuItemWithSub
         to='/crafted/pages'
         title='Pages'
         fontIcon='bi-archive'
@@ -125,9 +162,9 @@ const SidebarMenuMain = () => {
           </span>
           <span className='menu-title'>Changelog {process.env.REACT_APP_VERSION}</span>
         </a>
-      </div>
+      </div> */}
     </>
-  )
-}
+  );
+};
 
-export {SidebarMenuMain}
+export { SidebarMenuMain };

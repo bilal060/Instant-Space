@@ -17,24 +17,24 @@ const SidebarLogo = () => {
   const toggleState = appSidebarDefaultMinimizeDesktopEnabled ? 'active' : ''
   const appSidebarDefaultMinimizeDefault = config.app?.sidebar?.default?.minimize?.desktop?.default
   return (
-    <div className='app-sidebar-logo px-6' id='kt_app_sidebar_logo'>
+    <div className='app-sidebar-logo px-8' id='kt_app_sidebar_logo'>
       <Link to='/dashboard'>
         {config.layoutType === 'dark-sidebar' ? (
           <img
             alt='Logo'
-            src={toAbsoluteUrl('/media/logos/default-dark.svg')}
+            src={toAbsoluteUrl('/media/logos/LOGO.svg')}
             className='h-25px app-sidebar-logo-default'
           />
         ) : (
           <>
             <img
               alt='Logo'
-              src={toAbsoluteUrl('/media/logos/default.svg')}
+              src={toAbsoluteUrl('/media/logos/LOGO.svg')}
               className='h-25px app-sidebar-logo-default theme-light-show'
             />
             <img
               alt='Logo'
-              src={toAbsoluteUrl('/media/logos/default-dark.svg')}
+              src={toAbsoluteUrl('/media/logos/LOGO.svg')}
               className='h-25px app-sidebar-logo-default theme-dark-show'
             />
           </>
@@ -42,12 +42,12 @@ const SidebarLogo = () => {
 
         <img
           alt='Logo'
-          src={toAbsoluteUrl('/media/logos/default-small.svg')}
+          src={toAbsoluteUrl('/media/logos/LOGO.svg')}
           className='h-20px app-sidebar-logo-minimize'
         />
       </Link>
 
-      {(appSidebarDefaultMinimizeDesktopEnabled || appSidebarDefaultCollapseDesktopEnabled) && (
+      {/* {(appSidebarDefaultMinimizeDesktopEnabled || appSidebarDefaultCollapseDesktopEnabled) && (
         <div
           id='kt_app_sidebar_toggle'
           className={clsx(
@@ -61,7 +61,7 @@ const SidebarLogo = () => {
         >
           <KTSVG path='/media/icons/duotune/arrows/arr079.svg' className='svg-icon-2 rotate-180' />
         </div>
-      )}
+      )} */}
     </div>
   )
 }

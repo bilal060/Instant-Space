@@ -18,6 +18,23 @@ code {
 .text-45 {
   font-size: 45px !important;
 }
+/* font color */
+.text-gray{
+  color: #7D8695 !important;
+}
+.text-primary{
+  color: #0064FA !important
+}
+.text-black{
+  color: #171D25 !important;
+}
+.text-green{
+  color: #169401;
+}
+.text-red{
+  color: #FF3030;
+}
+
 
 input[placeholder="Email"] {
   background-color: white;
@@ -65,7 +82,7 @@ hr{
 }
 
 span{
-  width: 100px !important;
+  /* width: 100px !important; */
   display: inline-block;
   text-align: center;
 }

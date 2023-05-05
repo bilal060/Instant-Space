@@ -9,7 +9,8 @@ const Header: FC = () => {
   }, [config])
 
   return (
-    <div
+    <>
+    {/* <div
       className='
         menu
         menu-rounded
@@ -25,7 +26,8 @@ const Header: FC = () => {
       data-kt-menu='true'
     >
       <MenuInner />
-    </div>
+    </div> */}
+    </>
   )
 }
 

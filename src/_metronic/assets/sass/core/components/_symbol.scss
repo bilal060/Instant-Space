@@ -41,7 +41,7 @@
     width: 100%;
     flex-shrink: 0;
     display: inline-block;
-    @include border-radius($border-radius);
+    border-radius: 1.475rem !important;
   }
 
   // Square
