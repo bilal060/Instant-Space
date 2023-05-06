@@ -38,8 +38,8 @@
 
   // Vars
   :root {
-    --kt-app-sidebar-width: #{$app-sidebar-base-width};
-    --kt-app-sidebar-width-actual: #{$app-sidebar-base-width};
+    --kt-app-sidebar-width: 376px;
+    --kt-app-sidebar-width-actual: 328px;
 
     --kt-app-sidebar-gap-start: #{$app-sidebar-base-gap-start};
     --kt-app-sidebar-gap-end: #{$app-sidebar-base-gap-end};

@@ -15,7 +15,8 @@ const ToolbarWrapper = () => {
   )
 
   return (
-    <div
+    <>
+    {/* <div
       id='kt_app_toolbar'
       className={clsx('app-toolbar', classes.toolbar.join(' '), config?.app?.toolbar?.class)}
     >
@@ -35,7 +36,8 @@ const ToolbarWrapper = () => {
         {isPageTitleVisible && <PageTitleWrapper />}
         <Toolbar />
       </div>
-    </div>
+    </div> */}
+    </>
   )
 }
 

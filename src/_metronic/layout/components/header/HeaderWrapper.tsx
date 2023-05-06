@@ -5,6 +5,7 @@ import {KTSVG, toAbsoluteUrl} from '../../../helpers'
 import {useLayout} from '../../core'
 import {Header} from './Header'
 import {Navbar} from './Navbar'
+import React from 'react'
 
 export function HeaderWrapper() {
   const {config, classes} = useLayout()
@@ -49,19 +50,19 @@ export function HeaderWrapper() {
               {config.layoutType !== 'dark-header' ? (
                 <img
                   alt='Logo'
-                  src={toAbsoluteUrl('/media/logos/default-dark.svg')}
+                  src={toAbsoluteUrl('/media/logos/LOGO.svg')}
                   className='h-20px h-lg-30px app-sidebar-logo-default'
                 />
               ) : (
                 <>
                   <img
                     alt='Logo'
-                    src={toAbsoluteUrl('/media/logos/default.svg')}
+                    src={toAbsoluteUrl('/media/logos/LOGO.svg')}
                     className='h-20px h-lg-30px app-sidebar-logo-default theme-light-show'
                   />
                   <img
                     alt='Logo'
-                    src={toAbsoluteUrl('/media/logos/default-dark.svg')}
+                    src={toAbsoluteUrl('/media/logos/LOGO.svg')}
                     className='h-20px h-lg-30px app-sidebar-logo-default theme-dark-show'
                   />
                 </>

@@ -132,16 +132,31 @@
 }
 
 // Set menu link theme
-@mixin menu-link-theme($title-color, $icon-color, $bullet-color, $arrow-color, $bg-color: null) {
+@mixin menu-link-theme(
+  $title-color,
+  $icon-color,
+  $bullet-color,
+  $arrow-color,
+  $bg-color: null
+) {
   @if ($bg-color != null) {
-    background-color: $bg-color;
+    background-color: #F0F6FF !important;
+    .menu-title{
+      color: var(--kt-primary) !important;
+
+    }
   }
 
   @if ($title-color != null) {
     color: $title-color;
 
     .menu-title {
-      color: $title-color;
+      color: #7d8695 ;
+      font-family: SF Pro Display !important;
+      font-size: 18px !important;
+      font-weight: 400 !important;
+      line-height: 18px !important;
+      letter-spacing: 0em !important;
     }
   }
 
@@ -190,7 +205,13 @@
   }
 
   #{$sel}.menu-link {
-    @include menu-link-theme($title-color, $icon-color, $bullet-color, $arrow-color, $bg-color);
+    @include menu-link-theme(
+      $title-color,
+      $icon-color,
+      $bullet-color,
+      $arrow-color,
+      $bg-color
+    );
   }
 }
 
@@ -213,7 +234,13 @@
   #{$sel}.menu-link:hover:not(.disabled):not(.active):not(.here) {
     transition: $transition-link;
 
-    @include menu-link-theme($title-color, $icon-color, $bullet-color, $arrow-color, $bg-color);
+    @include menu-link-theme(
+      $title-color,
+      $icon-color,
+      $bullet-color,
+      $arrow-color,
+      $bg-color
+    );
   }
 }
 
@@ -232,10 +259,16 @@
     $sel: '& > ';
   }
 
-  #{$sel}.menu-link.active {
+  #{$sel}.menu-link.active  {
     transition: $transition-link;
 
-    @include menu-link-theme($title-color, $icon-color, $bullet-color, $arrow-color, $bg-color);
+    @include menu-link-theme(
+      $title-color,
+      $icon-color,
+      $bullet-color,
+      $arrow-color,
+      $bg-color
+    );
   }
 }
 
@@ -252,7 +285,13 @@
   &.show > .menu-link {
     transition: $transition-link;
 
-    @include menu-link-theme($title-color, $icon-color, $bullet-color, $arrow-color, $bg-color);
+    @include menu-link-theme(
+      $title-color,
+      $icon-color,
+      $bullet-color,
+      $arrow-color,
+      $bg-color
+    );
   }
 }
 
@@ -268,7 +307,13 @@
   &.here > .menu-link {
     transition: $transition-link;
 
-    @include menu-link-theme($title-color, $icon-color, $bullet-color, $arrow-color, $bg-color);
+    @include menu-link-theme(
+      $title-color,
+      $icon-color,
+      $bullet-color,
+      $arrow-color,
+      $bg-color
+    );
   }
 }
 
@@ -311,7 +356,6 @@
 
   #{$sel}.menu-link.active {
     transition: $transition-link;
-
     @content;
   }
 }
