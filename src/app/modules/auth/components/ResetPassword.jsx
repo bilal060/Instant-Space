@@ -166,6 +166,7 @@ export function ResetPassword() {
 
 
               <div className="eye absolute"></div>
+              <div className="eye1 absolute"></div>
 
               
               <div className='pt-10'>

@@ -6,16 +6,18 @@ import {useFormik} from 'formik'
 import * as Yup from 'yup'
 import clsx from 'clsx'
 import {getUserByToken, register} from '../core/_requests'
-import {Link} from 'react-router-dom'
-import {toAbsoluteUrl} from '../../../../_metronic/helpers'
+import {Link, useNavigate} from 'react-router-dom'
 import {PasswordMeterComponent} from '../../../../_metronic/assets/ts/components'
 import {useAuth} from '../core/Auth'
 import Logo from './cmpnt/logo'
 import AuthHead from './cmpnt/authHead'
 import AuthDesc from './cmpnt/authDesc'
-import ButtonDesc from './cmpnt/buttonDesc'
-import DatePicker from 'react-date-picker';
 import ButtonDesc1 from './cmpnt/buttonDesc1'
+import PhoneInput from 'react-phone-input-2'
+import { getCountries, getCountryCallingCode } from 'react-phone-number-input'
+import en from 'react-phone-number-input/locale/en'
+import 'react-phone-number-input/style.css'
+import 'react-phone-input-2/lib/style.css'
 
 const initialValues = {
   firstname: '',
@@ -92,6 +94,14 @@ export function PersonalInfo() {
     const handleChange = (e) => {
     setDate(e.target.value);
     };
+
+    
+    const [value, setvalue] = useState('')
+    const [country, setCountry] = useState('US')
+    
+   
+    
+
   return (
     <form
       className='form w-100'
@@ -111,16 +121,6 @@ export function PersonalInfo() {
             <div className="input sm:pr-[140px] relative">
              
       <div className='fv-row '>
-
-        
-      {/* <div className="lg:mt-4 md:mt-4 sm:mt-4">
-            <DropDown
-              // className="mb-xl-8"
-              color="danger"
-            />
-          </div> */}
-
-
         <input
           placeholder='Full Name'
           className={clsx(
@@ -140,29 +140,43 @@ export function PersonalInfo() {
           </div>
         )}
       </div>
+
+      
              
-        <div className='mb-3'>
+        
+
+                    <div id='phone' className='form-control p-0 bg-transparent border-0 mb-4'>
+
+                        <div className='custom-phone-input auth-input d-flex align-items-center'>
+                            <CountrySelect
+                                labels={en}
+                                value={country}
+                                onChange={setCountry}
+                                id="phone"
+                                className='bg-transparent outline-0 border-0 custom-phone-dropdown-btn font-18-100 ml-11'
+                            />
+                            <PhoneInput
+                                countrySelectProps={{ unicodeFlags: false }}
+                                country={country}
+                                value={value}
+                                onChange={setvalue}
+                                buttonClass='d-none'
+                                inputClass='bg-transparent outline-0 shadow-none custom-phone-input-1 font-18-100'
+                            />
+                        </div>
+                    </div>
+
+
+      <div className='fv-row '>
         <input
-          type='text'
-          placeholder='Number'
-          autoComplete='off'
+          placeholder='Date of Birth'
           className={clsx(
             'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
           )}
-        />
-      </div>
-
-
-      <div className='mb-3'>
-        <input
-          type='date'
-          placeholder='Date of Birth'
+          type='text'
+          onFocus={(e) => (e.currentTarget.type = "date")}
+          // onBlur={(e) => (e.currentTarget.type = "text")}
           autoComplete='off'
-          onChange={handleChange}
-          ref={dateInputRef}
-          className={clsx(
-            'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg mb-4 bg-transparent',
-          )}
         />
       </div>
 
@@ -177,7 +191,7 @@ export function PersonalInfo() {
       </div>
 
 
-              <div className="eye absolute"></div>
+              {/* <div className="eye absolute"></div> */}
 
               <Link to="company">
               <div className='pt-10'>
@@ -191,7 +205,7 @@ export function PersonalInfo() {
             </div>
             <div className="pt-8 flex justify-center sm:pr-[140px]">
               <Link to='/'>
-                   <ButtonDesc1 text1="By Registering, your're agree to our," text2="Terms and Condition" text3="and" text4="Privacy Policy"/>
+                   <ButtonDesc1 text1="By Registering, your're agree to our," text2="Terms and Condition" text3=" and" text4="Privacy Policy"/>
               </Link>
               </div>
           </div>
@@ -204,3 +218,21 @@ export function PersonalInfo() {
     </form>
   )
 }
+
+const CountrySelect = ({ value, onChange, labels, ...rest }) => (
+  <select
+      {...rest}
+      value={value.match(/[A-Z]/g).join('')}
+      onChange={event => onChange(event.target.value || undefined)}
+      
+      >
+      <option value="">
+          {labels['ZZ']}
+      </option>
+      {getCountries().map((country) => (
+          <option key={country} value={country}>
+              {labels[country].match(/[A-Z]/g).join('')} +{getCountryCallingCode(country)}
+          </option>
+      ))}
+  </select>
+)

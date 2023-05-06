@@ -20,17 +20,17 @@ const DropDown: React.FC<Props> = ({className, color, image, title, btndata,text
   const dropdownRef = useRef(null);
 
   return (
-    <div className={`rounded-[8px]`}>
+    <div className={`rounded-[8px] bg-transparent`}>
      
       
-        <div className=" flex justify-start pb-4" id="dropdown" ref={dropdownRef}>
+        <div className=" flex justify-start pb-4 bg-transparent"  ref={dropdownRef}>
           <button
            onClick={() => setIsOpen(!isOpen)}
-            className=" w-full border-2 border-solid !border-[#7D8695] rounded-lg px-5 h-14 text-center flex justify-between items-center"
+            className=" w-full border-2 border-solid  !border-[#7D8695] rounded-lg px-5 h-14 text-center flex justify-between items-center"
             type="button"
-            id='dropDown'
+            id="dropDown"
           >
-           <span  className="text-[#9A9AB0]">{title}</span>  
+           <span  className="text-[#9A9AB0] ml-6">{title}</span>  
             <svg
               className="w-4 h-4 ml-40"
               aria-hidden="true"

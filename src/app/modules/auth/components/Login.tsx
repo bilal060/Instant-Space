@@ -60,7 +60,9 @@ export function Login() {
       }
     },
   })
-
+function changeType(){
+  
+}
   return (
     <form
       className='form w-100'

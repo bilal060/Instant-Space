@@ -17,6 +17,12 @@ import ButtonDesc from './cmpnt/buttonDesc'
 import DatePicker from 'react-date-picker';
 import ButtonDesc1 from './cmpnt/buttonDesc1'
 import { DropDown } from './cmpnt/dropDown'
+import PhoneInput from 'react-phone-input-2'
+import { getCountries, getCountryCallingCode } from 'react-phone-number-input'
+import en from 'react-phone-number-input/locale/en'
+import 'react-phone-number-input/style.css'
+import 'react-phone-input-2/lib/style.css'
+
 
 const initialValues = {
   firstname: '',
@@ -93,6 +99,9 @@ export function CompanyInfo() {
     const handleChange = (e) => {
     setDate(e.target.value);
     };
+
+    const [value, setvalue] = useState('')
+    const [country, setCountry] = useState('US')
   return (
     <form
       className='form w-100'
@@ -133,21 +142,33 @@ export function CompanyInfo() {
         )}
       </div>
 
-      <div className="lg:mt-4 md:mt-4 sm:mt-4">
+      <div className="lg:mt-4 md:mt-4 sm:mt-4 bg-transparent">
             <DropDown
               title="Select Type"
             />
           </div>
              
         <div className='mb-3'>
-        <input
-          type='number'
-          placeholder='Number'
-          autoComplete='off'
-          className={clsx(
-            'form-control w-100 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
-          )}
-        />
+                    <div id='phone' className='form-control p-0 bg-transparent border-0 mb-4'>
+
+                        <div className='custom-phone-input auth-input d-flex align-items-center'>
+                            <CountrySelect
+                                labels={en}
+                                value={country}
+                                onChange={setCountry}
+                                className='bg-transparent outline-0 border-0 custom-phone-dropdown-btn font-18-100 ml-11'
+                            />
+                            <PhoneInput
+                                countrySelectProps={{ unicodeFlags: false }}
+                                country={country}
+                                value={value}
+                                onChange={setvalue}
+                                buttonClass='d-none'
+
+                                inputClass='bg-transparent outline-0 shadow-none custom-phone-input-1 font-18-100'
+                            />
+                        </div>
+                    </div>
       </div>
 
 
@@ -176,7 +197,7 @@ export function CompanyInfo() {
       </div>
 
 
-     <div className="w-100 rounded-lg bg-[#C3D6DA] border-2 stroke-border border-[#c0d2d6] h-14">
+     <div className="w-100 rounded-lg bg-[#F1F6F7] stroke-border h-14">
             <div className="flex items-center justify-between">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 items-center mx-8 mt-1 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
@@ -185,11 +206,11 @@ export function CompanyInfo() {
                      Choose file/Drag & Drop Here
                 </p>
             </div>
-          <input type="file" className="opacity-0" />
+          <input type="file" className="opacity-0 mb-5" />
     </div>
 
 
-              <div className="eye absolute"></div>
+              {/* <div className="eye absolute"></div> */}
 
               <Link to="company">
               <div className='pt-10'>
@@ -216,3 +237,18 @@ export function CompanyInfo() {
     </form>
   )
 }
+const CountrySelect = ({ value, onChange, labels, ...rest }) => (
+    <select
+        {...rest}
+        value={value.match(/[A-Z]/g).join('')}
+        onChange={event => onChange(event.target.value || undefined)}>
+        <option value="">
+            {labels['ZZ']}
+        </option>
+        {getCountries().map((country) => (
+            <option key={country} value={country}>
+                {labels[country].match(/[A-Z]/g).join('')} +{getCountryCallingCode(country)}
+            </option>
+        ))}
+    </select>
+  )

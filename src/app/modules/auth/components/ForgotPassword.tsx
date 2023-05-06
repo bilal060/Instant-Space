@@ -102,7 +102,7 @@ export function ForgotPassword() {
       </div>
              
         
-              <div className="eye absolute"></div>
+              {/* <div className="eye absolute"></div> */}
 
              <Link to="otp">
               <div className='pt-10'>

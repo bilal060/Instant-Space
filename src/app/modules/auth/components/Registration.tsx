@@ -162,6 +162,10 @@ export function Registration() {
       </div>
 
       {/* <div className="eye1 absolute"></div> */}
+      <div className="eye2 absolute"></div>
+      <div className="eye3 absolute"></div>
+
+
 
       <div className='mb-3'>
         <input

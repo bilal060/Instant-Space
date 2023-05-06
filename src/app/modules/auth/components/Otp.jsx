@@ -101,7 +101,7 @@ export function Otp() {
       </div>
              
         
-              <div className="eye absolute"></div>
+              {/* <div className="eye absolute"></div> */}
 
              
               <div className='pt-10'>
