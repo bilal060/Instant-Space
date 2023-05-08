@@ -2,11 +2,12 @@ import React from 'react';
 
 export default function SpaceCard() {
   return (
-    <div className="flex flex-col">
-      <div className="img">
+    <div className="flex flex-col rounded-lg">
+      <div className="img relative">
         <img src="/media/icons/cardImages/bg1.svg" className="w-full" />
       </div>
-      <div className="text bg-white ">
+        <div className="gallery absolute pt-4 pl-4"><p className='bg-[#171D25] opacity-60 py-1 px-2 flex text-white rounded-lg'><img src='/media/icons/cardIcons/gallery.svg' className='mr-1'/>12</p></div>
+      <div className="text bg-white rounded-lg shadow">
         <div className="text-lg font-bold pt-4 px-4">ACE Parking Lounge</div>
         <div className="row mx-4 pt-4">
           <div className="px-0 col-7 flex items-center ">
@@ -59,8 +60,8 @@ export default function SpaceCard() {
                 className="sr-only peer h-3.5 w-3.5"
                 checked
               />
-              <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-              <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300 pl-1">
+              <div className="w-6 h-3.5 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-2 after:w-2 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+              <span className="ml-1 text-sm font-medium text-gray-900 dark:text-gray-300 pl-1">
                 Available
               </span>
             </label>
