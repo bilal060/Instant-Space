@@ -1,0 +1,108 @@
+
+.fc { /* the calendar root */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.fc-header-toolbar{
+    background-color: transparent !important;
+}
+.fc-header-toolbar::before{
+    content:'Calender';
+    font-family: SF Pro Display;
+font-size: 24px;
+font-weight: 800;
+line-height: 24px;
+letter-spacing: 0em;
+
+}
+.fc-theme-standard{
+    border-radius: 6px !important;
+}
+.fc-view-harness{
+    background-color: white !important;
+    border-radius: 6px !important;
+}
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 9px !important;
+}
+.fc .fc-daygrid-day-top {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center !important;
+}
+.fc-daygrid-day{
+    height: 6rem !important;
+    width: 4rem !important;
+}
+.fc-media-screen:nth-child(1){
+    height: 35.5rem !important
+}
+.fc-scroller-harness > .fc-scroller {
+    overflow: hidden !important;
+    scroll-behavior: none !important;
+}
+.fc-theme-standard th{
+    border-bottom: none !important;
+    border-right: none !important;
+    border-left: none !important;
+
+}
+.fc-theme-standard td{
+    border: 1px solid #E7E6E9 !important;
+}
+.fc-today-button{
+    display: none !important;
+}
+.fc .fc-toolbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between !important;
+}
+#fc-dom-1{
+    margin-left: 2.5rem;
+    font-family: SF Pro Display;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #7D8695;
+}
+.fc .fc-button {
+    padding: 0.25rem 0.25rem !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 0.475rem;
+    vertical-align: middle;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.fc-next-button{
+    margin-left: 10px !important;
+}
+.fc-button-primary{
+    border: 2px solid #7D8695 !important;
+    border-radius: 6px !important;
+}
+.fc .fc-button-group .fc-button {
+    margin-left: 5px !important;
+}
+.fc-icon{
+    height: 1.1em !important;
+    border: 2px solid #7D8695;
+    border-radius: 6px;
+    padding-bottom: 6px !important;
+}
+.fc-event{
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    background: rgba(0, 100, 250, .4)  !important;
+    color: white !important;
+}
+.fc-daygrid-day-events{
+    margin-top: 10px !important;
+}
+.fc-event-main{
+    border: none !important;
+}
