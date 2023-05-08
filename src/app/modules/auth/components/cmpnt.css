@@ -38,28 +38,198 @@ code {
 
 input[placeholder="Email"] {
   background-color: white;
-  /* background-image: url("../public/images/icons/@.svg"); */
+  background-image: url("../../../../../public/images/icons/@.svg");
+  background-position: 10px 13px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+button[id="dropDown"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/dropdown.svg");
+  background-position: 10px 11px;
+  background-repeat: no-repeat;
+  padding: 12px 40px 12px 40px;
+  font-size: 18px;
+}
+
+input[placeholder="Company Name"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/companyName.svg");
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="Full Name"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/fullName.svg");
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+
+input[placeholder="Date of Birth"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/calender.svg");
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+
+input[placeholder="Date of Birth"] 
+::-webkit-inner-spin-button { display: block; }
+::-webkit-calendar-picker-indicator { 
+  background: transparent;
+  position: absolute;
+  left: 0.7rem;
+}
+
+div[id="phone"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/number.svg");
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="Company License Number"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/licenseNumber.svg");
+  background-position: 10px 13px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="Complete Address"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/location.svg");
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="Enter Email OTP"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/otp.svg");
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[id="dropdown"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/dropdown.svg");
   background-position: 10px 17px;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
-input[type="password"] {
+
+input[placeholder="Password"] {
   background-color: white;
-  /* background-image: url("../public/images/icons/lock.svg"); */
-  background-position: 10px 17px;
+  
+  background-image: url("../../../../../public/images/icons/lock.svg");
+  background-position: 10px 13px;
   background-repeat: no-repeat;
   padding: 12px 0px 12px 40px;
   font-size: 18px;
 }
-.eye {
-  /* background-image: url("../public/images/icons/eye.svg"); */
-  background-position: 10px 17px;
+@media screen and (min-width:992px) {
+  .eye {
+    background-image: url("../../../../../public/images/icons/eye.svg");
+    background-position: 10px 17px;
+    background-repeat: no-repeat;
+    padding: 26px 16px 35px;
+    font-size: 18px;
+    top: 55px;
+    right: 160px;
+  }
+}
+@media screen and (max-width:992px) {
+  .eye {
+    background-image: url("../../../../../public/images/icons/eye.svg");
+    background-position: 10px 17px;
+    background-repeat: no-repeat;
+    padding: 26px 16px 35px;
+    font-size: 18px;
+    top: 49px;
+    right: 160px;
+  }
+}
+
+@media screen and (min-width:992px){
+  .eye1{
+    background-image: url("../../../../../public/images/icons/eye.svg");
+  background-position: 10px 37px;
   background-repeat: no-repeat;
-  padding: 26px 1px 16px 35px;
+  padding: 26px 16px 35px;
   font-size: 18px;
-  top: 83px;
+  top: -23px;
   right: 160px;
+  }
+}
+
+@media screen and (max-width:992px){
+  .eye1{
+    background-image: url("../../../../../public/images/icons/eye.svg");
+  background-position: 10px 37px;
+  background-repeat: no-repeat;
+  padding: 26px 16px 35px;
+  font-size: 18px;
+  top: -25px;
+  right: 160px;
+  }
+}
+
+@media screen and (min-width:992px){
+  .eye2{
+    background-image: url("../../../../../public/images/icons/eye.svg");
+    background-position: 10px 37px;
+    background-repeat: no-repeat;
+    padding: 26px 16px 35px;
+    font-size: 18px;
+    top: 93px;
+    right: 160px;
+  }
+}
+
+@media screen and (max-width:992px){
+  .eye2{
+    background-image: url("../../../../../public/images/icons/eye.svg");
+    background-position: 10px 37px;
+    background-repeat: no-repeat;
+    padding: 26px 16px 35px;
+    font-size: 18px;
+    top: 83px;
+    right: 160px;
+  }
+}
+
+@media screen and (min-width:992px){
+  .eye3{
+    background-image: url("../../../../../public/images/icons/eye.svg");
+  background-position: 10px 37px;
+  background-repeat: no-repeat;
+  padding: 26px 16px 35px;
+  font-size: 18px;
+  top: 151px;
+  right: 160px;
+  }
+}
+
+@media screen and (max-width:992px){
+  .eye3{
+    background-image: url("../../../../../public/images/icons/eye.svg");
+  background-position: 10px 37px;
+  background-repeat: no-repeat;
+  padding: 26px 16px 35px;
+  font-size: 18px;
+  top: 138px;
+  right: 160px;
+  }
 }
 .linearGradient {
   background-image: linear-gradient(
@@ -68,7 +238,7 @@ input[type="password"] {
       #171d25 83.85%
     ),
     url("../../../../../public/media/misc/Rectangle.png") !important; 
-    height: 95%;
+    height: 100%;
   background-size: cover;
   color: white;
   padding: 20px;
@@ -112,3 +282,62 @@ span{
   }
 
 }
+
+.stroke-border{
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='rgba(195, 214, 218, 1)' stroke-width='2' stroke-dasharray='5%2c 15' stroke-dashoffset='41' stroke-linecap='round'/%3e%3c/svg%3e"); 
+  border-radius: 10px;
+}
+
+
+.custom-phone-dropdown-btn {
+  max-width: 75px;
+  border: 0;
+  outline: 0;
+  color: #A3A3A3;
+  font-size: 18px !important;
+  line-height: 100%;
+}
+
+.custom-phone-input-1 {
+  padding: 3px 12px 3px 0px !important;
+  border-color: #A3A3A3 !important;
+  border-width: 0 0 0 0px !important;
+  border-radius: 0 !important;
+  height: 24px !important;
+  margin-left: 20px !important;
+}
+
+.auth-input {
+  height: 46px;
+  /* background-color: #1D1D1D !important; */
+  color: #A3A3A3;
+  border: 1px solid #6B6B6B;
+  border-radius: 5px;
+  width: 100%;
+  /* padding: 10px 20px; */
+  outline: 0;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+/* @media screen and (max-width:992px) {
+  .heit{
+      height: 50rem !important;
+  }
+
+} */
+.auth-input1 {
+  height: 56px;
+  /* background-color: #1D1D1D !important; */
+  color: #A3A3A3;
+  border: 1px solid #6B6B6B;
+  border-radius: 12px;
+  width: 100%;
+  padding: 10px 20px;
+  outline: 0;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+
+

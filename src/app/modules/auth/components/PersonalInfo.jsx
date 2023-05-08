@@ -1,20 +1,23 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import React from 'react'
 import {useFormik} from 'formik'
 import * as Yup from 'yup'
 import clsx from 'clsx'
 import {getUserByToken, register} from '../core/_requests'
-import {Link} from 'react-router-dom'
-import {toAbsoluteUrl} from '../../../../_metronic/helpers'
+import {Link, useNavigate} from 'react-router-dom'
 import {PasswordMeterComponent} from '../../../../_metronic/assets/ts/components'
 import {useAuth} from '../core/Auth'
 import Logo from './cmpnt/logo'
 import AuthHead from './cmpnt/authHead'
 import AuthDesc from './cmpnt/authDesc'
-import ButtonDesc from './cmpnt/buttonDesc'
-import { DropDown } from './cmpnt/dropDown'
+import ButtonDesc1 from './cmpnt/buttonDesc1'
+import PhoneInput from 'react-phone-input-2'
+import { getCountries, getCountryCallingCode } from 'react-phone-number-input'
+import en from 'react-phone-number-input/locale/en'
+import 'react-phone-number-input/style.css'
+import 'react-phone-input-2/lib/style.css'
 
 const initialValues = {
   firstname: '',
@@ -52,7 +55,7 @@ const registrationSchema = Yup.object().shape({
   acceptTerms: Yup.bool().required('You must accept the terms and conditions'),
 })
 
-export function Registration() {
+export function PersonalInfo() {
   const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
   const formik = useFormik({
@@ -85,6 +88,20 @@ export function Registration() {
     PasswordMeterComponent.bootstrap()
   }, [])
 
+  const [date, setDate] = useState('');
+    const dateInputRef = useRef(null);
+  
+    const handleChange = (e) => {
+    setDate(e.target.value);
+    };
+
+    
+    const [value, setvalue] = useState('')
+    const [country, setCountry] = useState('US')
+    
+   
+    
+
   return (
     <form
       className='form w-100'
@@ -98,26 +115,14 @@ export function Registration() {
         <div className="sm:!pl-36 pr-10 pl-10">
             <Logo />
             <div className="pt-32">
-              <AuthHead text1="Register " text2="Now" />
-              <AuthDesc desc="Create your new account" />
+              <AuthHead text1="Personal" text2="Info" />
+              <AuthDesc desc="Enter your personal information below." />
             </div>
             <div className="input sm:pr-[140px] relative">
              
       <div className='fv-row '>
-
-        
-      <div className="lg:mt-4 md:mt-4 sm:mt-4">
-            <DropDown
-              // className="mb-xl-8"
-              color="danger"
-              title="Select Role"
-            />
-          </div>
-
-
         <input
-          placeholder='Email'
-          {...formik.getFieldProps('email')}
+          placeholder='Full Name'
           className={clsx(
             'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
             {'is-invalid': formik.touched.email && formik.errors.email},
@@ -135,70 +140,63 @@ export function Registration() {
           </div>
         )}
       </div>
+
+      
              
-        <div className='mb-3'>
+        
+
+                    <div id='phone' className='form-control p-0 bg-transparent border-0 mb-4'>
+
+                        <div className='custom-phone-input auth-input d-flex align-items-center'>
+                            <CountrySelect
+                                labels={en}
+                                value={country}
+                                onChange={setCountry}
+                                id="phone"
+                                className='bg-transparent outline-0 border-0 custom-phone-dropdown-btn font-18-100 ml-11'
+                            />
+                            <PhoneInput
+                                countrySelectProps={{ unicodeFlags: false }}
+                                country={country}
+                                value={value}
+                                onChange={setvalue}
+                                buttonClass='d-none'
+                                inputClass='bg-transparent outline-0 shadow-none custom-phone-input-1 font-18-100'
+                            />
+                        </div>
+                    </div>
+
+
+      <div className='fv-row '>
         <input
-          type='password'
-          placeholder='Password'
-          autoComplete='off'
-          {...formik.getFieldProps('password')}
+          placeholder='Date of Birth'
           className={clsx(
             'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
-            {
-              'is-invalid': formik.touched.password && formik.errors.password,
-            },
-            {
-              'is-valid': formik.touched.password && !formik.errors.password,
-            }
           )}
+          type='text'
+          onFocus={(e) => (e.currentTarget.type = "date")}
+          // onBlur={(e) => (e.currentTarget.type = "text")}
+          autoComplete='off'
         />
-        {formik.touched.password && formik.errors.password && (
-          <div className='fv-plugins-message-container'>
-            <div className='fv-help-block'>
-              <span role='alert'>{formik.errors.password}</span>
-            </div>
-          </div>
-        )}
       </div>
-
-      {/* <div className="eye1 absolute"></div> */}
-      <div className="eye2 absolute"></div>
-      <div className="eye3 absolute"></div>
-
 
 
       <div className='mb-3'>
-        <input
-          type='password'
-          placeholder='Confirm Password'
-          autoComplete='off'
-          {...formik.getFieldProps('password')}
-          className={clsx(
-            'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
-            {
-              'is-invalid': formik.touched.password && formik.errors.password,
-            },
-            {
-              'is-valid': formik.touched.password && !formik.errors.password,
-            }
-          )}
-        />
-        {formik.touched.password && formik.errors.password && (
-          <div className='fv-plugins-message-container'>
-            <div className='fv-help-block'>
-              <span role='alert'>{formik.errors.password}</span>
-            </div>
-          </div>
-        )}
+          <textarea
+            placeholder="Add Your Bio"
+            type="text"
+            autoComplete="off"
+            className="form-control  w-100 bg-transparent !border !border-solid !border-[#7D8695] rounded-lg inputText h-32"
+          ></textarea>
       </div>
 
 
-              
+              {/* <div className="eye absolute"></div> */}
 
-              <Link to="personal-Info">
+              <Link to="company">
               <div className='pt-10'>
                     <button className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-14">
-                        Next
+                        Register
                     </button>
               </div>
               </Link>
@@ -207,7 +205,7 @@ export function Registration() {
             </div>
             <div className="pt-8 flex justify-center sm:pr-[140px]">
               <Link to='/'>
-                   <ButtonDesc text1="Already have an account?" text2="Login"/>
+                   <ButtonDesc1 text1="By Registering, your're agree to our," text2="Terms and Condition" text3=" and" text4="Privacy Policy"/>
               </Link>
               </div>
           </div>
@@ -220,3 +218,21 @@ export function Registration() {
     </form>
   )
 }
+
+const CountrySelect = ({ value, onChange, labels, ...rest }) => (
+  <select
+      {...rest}
+      value={value.match(/[A-Z]/g).join('')}
+      onChange={event => onChange(event.target.value || undefined)}
+      
+      >
+      <option value="">
+          {labels['ZZ']}
+      </option>
+      {getCountries().map((country) => (
+          <option key={country} value={country}>
+              {labels[country].match(/[A-Z]/g).join('')} +{getCountryCallingCode(country)}
+          </option>
+      ))}
+  </select>
+)

@@ -52,7 +52,7 @@ const registrationSchema = Yup.object().shape({
   acceptTerms: Yup.bool().required('You must accept the terms and conditions'),
 })
 
-export function Registration() {
+export function ResetPassword() {
   const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
   const formik = useFormik({
@@ -98,37 +98,15 @@ export function Registration() {
         <div className="sm:!pl-36 pr-10 pl-10">
             <Logo />
             <div className="pt-32">
-              <AuthHead text1="Register " text2="Now" />
-              <AuthDesc desc="Create your new account" />
+              <AuthHead text1="Reset " text2="Password" />
+              <AuthDesc desc="Create your new password." />
             </div>
             <div className="input sm:pr-[140px] relative">
              
       <div className='fv-row '>
 
         
-      <div className="lg:mt-4 md:mt-4 sm:mt-4">
-            <DropDown
-              // className="mb-xl-8"
-              color="danger"
-              title="Select Role"
-            />
-          </div>
-
-
-        <input
-          placeholder='Email'
-          {...formik.getFieldProps('email')}
-          className={clsx(
-            'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
-            {'is-invalid': formik.touched.email && formik.errors.email},
-            {
-              'is-valid': formik.touched.email && !formik.errors.email,
-            }
-          )}
-          type='email'
-          name='email'
-          autoComplete='off'
-        />
+      
         {formik.touched.email && formik.errors.email && (
           <div className='fv-plugins-message-container'>
             <span role='alert'>{formik.errors.email}</span>
@@ -139,7 +117,7 @@ export function Registration() {
         <div className='mb-3'>
         <input
           type='password'
-          placeholder='Password'
+          placeholder='New Password'
           autoComplete='off'
           {...formik.getFieldProps('password')}
           className={clsx(
@@ -160,17 +138,11 @@ export function Registration() {
           </div>
         )}
       </div>
-
-      {/* <div className="eye1 absolute"></div> */}
-      <div className="eye2 absolute"></div>
-      <div className="eye3 absolute"></div>
-
-
 
       <div className='mb-3'>
         <input
           type='password'
-          placeholder='Confirm Password'
+          placeholder='Confirm New Password'
           autoComplete='off'
           {...formik.getFieldProps('password')}
           className={clsx(
@@ -193,23 +165,19 @@ export function Registration() {
       </div>
 
 
-              
+              <div className="eye absolute"></div>
+              <div className="eye1 absolute"></div>
 
-              <Link to="personal-Info">
+              
               <div className='pt-10'>
                     <button className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-14">
-                        Next
+                        Save
                     </button>
               </div>
-              </Link>
+
              
 
             </div>
-            <div className="pt-8 flex justify-center sm:pr-[140px]">
-              <Link to='/'>
-                   <ButtonDesc text1="Already have an account?" text2="Login"/>
-              </Link>
-              </div>
           </div>
 
 
