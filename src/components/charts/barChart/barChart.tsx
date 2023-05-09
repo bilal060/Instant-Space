@@ -40,7 +40,7 @@ const BarChart1: React.FC<Props> = ({ className }) => {
   return (
     <div className={`card ${className}`}>
       <div className="flex justify-between py-4 px-6">
-          <div className="card-label rounded-2xl text-[#7D8695] p-2 font-bold bg-[#F4F4F4] flex justify-center">2002-2003 <img src='/media/icons/InstantIcons/cancel.svg' className='ml-1 mt-[2px]'/></div>
+          <div className="card-label rounded-lg bg-[#F4F4F4] my-2 px-2 flex justify-center"> <label className='text-[#7D8695] font-normal '> 2002-2003 </label> <img src='/media/icons/InstantIcons/cancel.svg' className='ml-1 mt-[2px]'/></div>
         <div className="button">
             <button className="px-5 py-2 bg-[#0064FA] text-white rounded-xl flex items-center">
               <img
@@ -134,7 +134,7 @@ function getChartOptions(height: number): ApexOptions {
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: '75%',
+        columnWidth: '80%',
       },
     },
     legend: {

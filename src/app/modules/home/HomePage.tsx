@@ -22,25 +22,27 @@ export default function HomePage() {
             </button>
           </div>
         </div>
-        <div className="space-card">
-          <div className="row mx-0 pt-4">
-            <div className="px-0 col-3 align-items-stretch">
-              <div className="spacing pr-4">
+        <div className="space-card user-panel">
+          <div className="row flex flex-wrap mx-0 pt-4">
+            <div className="px-0 col-3 ">
+              <div className="spacing card !bg-transparent pr-4">
                 <SpaceCard />
               </div>
             </div>
-            <div className="px-0 col-3 align-items-stretch">
-              <div className="spacing  pr-4">
+            <div className="px-0 col-3 ">
+              <div className="spacing card !bg-transparent  pr-4">
                 <SpaceCard />
               </div>
             </div>
-            <div className="px-0 col-3 align-items-stretch">
-              <div className="spacing  pr-4">
+            <div className="px-0 col-3 ">
+              <div className="spacing card !bg-transparent  pr-4">
                 <SpaceCard />
               </div>
             </div>
-            <div className="px-0 col-3 align-items-stretch">
+            <div className="pl-0 pr-4 col-3 py-6 ">
+              <div className="card shadow ">
               <AddNewSpaceCard />
+              </div>
             </div>
           </div>
         </div>
@@ -187,15 +189,15 @@ export default function HomePage() {
         {/* My Earnings and Calender */}
         <div className="section ">
           <div className="row">
-            <div className="col-7 px-0 ">
+            <div className="col-7  ">
               <div className="earnings">
-                <div className="head text-2xl font-bold mb-4">My Earnings</div>
+                <div className="head text-[1.75rem] font-bold mb-4">My Earnings</div>
                 <div className=" bg-white shadow rounded-lg">
                   <BarChart1 className="" />
                 </div>
               </div>
             </div>
-            <div className="col-5 px-0 ">
+            <div className="col-5 px-0 !pr-2 pt-3 ">
               <div className="calender ">
                 <EventCalender/>
               </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function AddNewSpaceCard() {
   return (
-    <div className="spacing px-10  bg-white rounded-lg items-center shadow ">
+    <div className="spacing px-10 rounded-lg items-center card-shadow ">
     <div className="img py-9 flex-col justify-center items-center ">
       <img
         src="/media/icons/cardIcons/space.svg"

@@ -16,7 +16,7 @@ export default class EventCalender extends React.Component {
 
   render() {
     return (
-      <div className='demo-app pl-4 '>
+      <div className='demo-app  '>
         {this.renderSidebar()}
         <div className='demo-app-main'>
           <FullCalendar
@@ -97,7 +97,7 @@ function renderEventContent(eventInfo) {
   return (
     <>
       <b className=''>{eventInfo.timeText}</b>
-      <i>{eventInfo.event.title}</i>
+      <label>{eventInfo.event.title}</label>
     </>
   )
 }
