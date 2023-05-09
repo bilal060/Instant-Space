@@ -1349,34 +1349,34 @@
   resolved "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-6.1.1.tgz"
   integrity sha512-J/3yg2AIXc9wznaVqpHVX3Wa5jwKovVF0AMYSnbmcXTiL3PpRPfF58pzWucCwEiCJBp+hCNRLWClTomD8SseKg==
 
-"@fullcalendar/core@^6.1.6":
-  version "6.1.6"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-6.1.6.tgz#dba14c2e5a48044b7e932b0bcb20144b3699485c"
-  integrity sha512-Q/3pWgOv7qr/eVpuDz+05jxJZSg7Fdwh4XgQP8DlJFLp5aLlOiiKdkTUIO1BX7clQtYTm8P0v7FqMKbsFiQInw==
+"@fullcalendar/core@^6.1.7":
+  version "6.1.7"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-6.1.7.tgz#83d8b109fbf0deb1d4c3262ca4b2d70e77a287c4"
+  integrity sha512-Hc63ARSyABlNo10B3NkA0z8ndaDmq5MKpcBB2iQsGQyn8N8cyn/x6V284Je1EwDoKsBlbrZAj+j+efBO+QQf5g==
   dependencies:
     preact "~10.12.1"
 
-"@fullcalendar/daygrid@^6.1.6", "@fullcalendar/daygrid@~6.1.6":
-  version "6.1.6"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-6.1.6.tgz#b60c88ad686b2546daa7eb7ef2369996d14753d2"
-  integrity sha512-HKxprePWXRyg1Shn7p0CWgggFZVwvs+Pg0Z9uSvx6a58wP1yTbOoJHhSVv5CDsfjnq1a0y6DsJbPP/V2LDl6bg==
+"@fullcalendar/daygrid@^6.1.7", "@fullcalendar/daygrid@~6.1.7":
+  version "6.1.7"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-6.1.7.tgz#529d5f1989081c5ab9d129fcaf409111b31be976"
+  integrity sha512-IB+QdRcs+TeTlsK8qJFtYZ/2GugmXEFC0C00/n1aLT7GLgFn3ueV1GN0EKvXv9HJ5ai8My65mYbSyQizY/Ishw==
 
-"@fullcalendar/interaction@^6.1.6":
-  version "6.1.6"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/interaction/-/interaction-6.1.6.tgz#9fe3f84a0b62e37013a5d842c8173fd5f72eb39a"
-  integrity sha512-6TjKbDHOkF3C9hIzIhxiTX5FCmNcaCeRk5CeKXHZiIi1Y8gQwIkUkwcZps5uj7PIvb3wNVw8FbF+RNRoloPUqQ==
+"@fullcalendar/interaction@^6.1.7":
+  version "6.1.7"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/interaction/-/interaction-6.1.7.tgz#f2d86312371b284b46caae8c74b303e1fc7bdd4c"
+  integrity sha512-C2KHSinc9cFUTcGYxRSIj7cBYNSroce+1d2Wa+HKVHguVv4kQuEvm/oPxJpTLXqFjNLfxyxVac7Zd4U0znjFtg==
 
-"@fullcalendar/react@^6.1.6":
-  version "6.1.6"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/react/-/react-6.1.6.tgz#2fc0161bdc79aaa3cece12189bd87ea926abff33"
-  integrity sha512-Ib1jl+4SwlyzM5JsVkhBEoB45hL11sQaN9O600XAa39lK2vSL4d0+ZTBSsBBdmezcHd/iECFk64jS0e3agGPVg==
+"@fullcalendar/react@^6.1.7":
+  version "6.1.7"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/react/-/react-6.1.7.tgz#acdfaa84b0b12a9a70b26a6e8d494c14de0d3b44"
+  integrity sha512-Pwe88D4zXwP/XQsYWOa1foroF/OpHSLet5CiE4crnaKvngEtzt3SBDIO01agQOpo+yE1KM/n3yE5ePbdJtVJIQ==
 
-"@fullcalendar/timegrid@^6.1.6":
-  version "6.1.6"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/timegrid/-/timegrid-6.1.6.tgz#9a3cb0e1d68106094b0462c93c1e5a869b2209c0"
-  integrity sha512-WqiGGmzNJeeIt4QjXuBlYTGHp4B+OUb7pYwREt1fer+9keNyG7dd48367pBdia8USk9B3Ep2oHC0aGypJGUFdA==
+"@fullcalendar/timegrid@^6.1.7":
+  version "6.1.7"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/timegrid/-/timegrid-6.1.7.tgz#1c2dac33a7870928359f17a5e142d26f08022f79"
+  integrity sha512-kVgJVswu96LrCozr+GyYzF+LUZjURC4HyDg11tCfrj2wMTsrYKqUxilTGXuD3daD4T7qp3CLCg5GdD6lbYHI7A==
   dependencies:
-    "@fullcalendar/daygrid" "~6.1.6"
+    "@fullcalendar/daygrid" "~6.1.7"
 
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
@@ -8412,15 +8412,6 @@ postcss-value-parser@^4.0.0, postcss-value-parser@^4.0.2, postcss-value-parser@^
   resolved "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-"postcss@^7.0.0 || ^8.0.1", postcss@^8, postcss@^8.0.0, postcss@^8.0.3, postcss@^8.0.9, postcss@^8.1.0, postcss@^8.1.4, postcss@^8.2, postcss@^8.2.14, postcss@^8.2.15, postcss@^8.2.2, postcss@^8.3, postcss@^8.3.11, postcss@^8.3.5, postcss@^8.4, postcss@^8.4.21, postcss@^8.4.23, postcss@^8.4.4, postcss@^8.4.6, postcss@^8.4.7, "postcss@>= 8", postcss@>=8, postcss@>=8.0.9:
-  version "8.4.23"
-  resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.23.tgz"
-  integrity sha512-bQ3qMcpF6A/YjR55xtoTr0jGOlnPOKAIMdOWiv0EIT6HVPEaJiJB4NLljSbiHoC2RX7DN5Uvjtpbg1NPdwv1oA==
-  dependencies:
-    nanoid "^3.3.6"
-    picocolors "^1.0.0"
-    source-map-js "^1.0.2"
-
 postcss@^7.0.35:
   version "7.0.39"
   resolved "https://registry.npmjs.org/postcss/-/postcss-7.0.39.tgz"
@@ -8437,6 +8428,11 @@ postcss@^8.3.11, postcss@^8.3.5, postcss@^8.4.23, postcss@^8.4.4, postcss@^8.4.7
     nanoid "^3.3.6"
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
+
+preact@~10.12.1:
+  version "10.12.1"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.12.1.tgz#8f9cb5442f560e532729b7d23d42fd1161354a21"
+  integrity sha512-l8386ixSsBdbreOAkqtrwqHwdvR35ID8c3rKPa8lCWuO86dBi32QWHV4vfsZK1utLLFMvw+Z5Ad4XLkZzchscg==
 
 prelude-ls@^1.2.1:
   version "1.2.1"
