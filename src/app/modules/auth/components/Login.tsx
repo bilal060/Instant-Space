@@ -60,10 +60,7 @@ export function Login() {
       }
     },
   })
-function changeType(){
-  
-}
-  return (
+return (
     <form
       className='form w-100'
       onSubmit={formik.handleSubmit}

@@ -144,7 +144,7 @@ export function CompanyInfo() {
 
       <div className="lg:mt-4 md:mt-4 sm:mt-4 bg-transparent">
             <DropDown
-              title="Select Type"
+              title="Select Type" id="dropDown"
             />
           </div>
              

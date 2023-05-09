@@ -146,7 +146,6 @@ export function PersonalInfo() {
         
 
                     <div id='phone' className='form-control p-0 bg-transparent border-0 mb-4'>
-
                         <div className='custom-phone-input auth-input d-flex align-items-center'>
                             <CountrySelect
                                 labels={en}

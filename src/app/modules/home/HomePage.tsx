@@ -3,6 +3,7 @@ import SpaceCard from '../../../components/instantComponents/spaceCard';
 import AddNewSpaceCard from '../../../components/instantComponents/AddNewSpaceCard';
 import { BookingsTable } from '../../../components/instantComponents/tableComponents';
 import '../../../index.css'
+import Modal from '../auth/components/cmpnt/modal';
 export default function HomePage() {
   return (
     <>
@@ -42,7 +43,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        {/* My bookings Section */}
+
         <div className="bookings">
           <div className="bookings-head flex justify-between items-center pt-10 pb-4">
             <div className="title font-extrabold text-2xl">Bookings History</div>
