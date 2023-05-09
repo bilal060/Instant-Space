@@ -40,8 +40,8 @@ export default function HomePage() {
                 <SpaceCard />
               </div>
             </div>
-            <div className="pl-0 pr-4 col-3 py-6 ">
-              <div className="card shadow ">
+            <div className="pl-0 pr-4 col-3 ">
+              <div className="card ">
               <AddNewSpaceCard />
               </div>
             </div>
