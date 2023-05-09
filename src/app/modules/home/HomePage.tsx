@@ -4,6 +4,8 @@ import AddNewSpaceCard from '../../../components/instantComponents/AddNewSpaceCa
 import { BookingsTable } from '../../../components/instantComponents/tableComponents';
 import '../../../index.css'
 import Modal from '../auth/components/cmpnt/modal';
+import { BarChart1 } from '../../../components/charts/barChart/barChart';
+import EventCalender from '../../../components/Calender/EventCalender';
 export default function HomePage() {
   return (
     <>
@@ -43,10 +45,12 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
-        <div className="bookings">
+        {/* My bookings Section */}
+        <div className="bookings ">
           <div className="bookings-head flex justify-between items-center pt-10 pb-4">
-            <div className="title font-extrabold text-2xl">Bookings History</div>
+            <div className="title font-extrabold text-2xl">
+              Bookings History
+            </div>
             <button className="text-base font-bold text-primary rounded-xl flex items-center">
               View All
               <img
@@ -56,7 +60,7 @@ export default function HomePage() {
               />
             </button>
           </div>
-          <div className="table tableBooking rounded-xl overflow-hidden">
+          <div className="table tableBooking shadow rounded-xl overflow-hidden">
             <div className=" bg-white rounded-lg">
               <table className="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
                 <thead className=" border-b-2 !border-[#E7E6E9]">
@@ -182,19 +186,21 @@ export default function HomePage() {
           </div>
         </div>
         {/* My Earnings and Calender */}
-        <div className="section">
+        <div className="section ">
           <div className="row">
-            <div className="col-6">
-            <div className="earnings">
-              <div className="head text-2xl font-bold">
-                Earnings
+            <div className="col-7 px-0 ">
+              <div className="earnings">
+                <div className="head text-2xl font-bold mb-4">My Earnings</div>
+                <div className=" bg-white shadow rounded-lg">
+                  <BarChart1 className="" />
+                </div>
               </div>
             </div>
+            <div className="col-5 px-0 ">
+              <div className="calender ">
+                <EventCalender/>
+              </div>
             </div>
-            <div className="col-6">
-            <div className="calender"></div>
-            </div>
-
           </div>
         </div>
       </div>

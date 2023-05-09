@@ -11,7 +11,7 @@ const systemMode = ThemeModeComponent.getSystemMode() as 'light' | 'dark'
 type ThemeModeContextType = {
   mode: ThemeModeType
   menuMode: ThemeModeType
-  updateMode: (_mode: ThemeModeType) => void
+  updateMode: (_mode: ThemeModeType) => void 
   updateMenuMode: (_mode: ThemeModeType) => void
 }
 
