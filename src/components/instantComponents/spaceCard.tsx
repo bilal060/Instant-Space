@@ -2,12 +2,12 @@ import React from 'react';
 
 export default function SpaceCard() {
   return (
-    <div className="flex flex-col rounded-lg">
+    <div className="flex flex-col rounded-lg shadow">
       <div className="img relative">
         <img src="/media/icons/cardImages/bg1.svg" className="w-full" />
       </div>
         <div className="gallery absolute pt-4 pl-4"><p className='bg-[#171D25] opacity-60 py-1 px-2 flex text-white rounded-lg'><img src='/media/icons/cardIcons/gallery.svg' className='mr-1'/>12</p></div>
-      <div className="text bg-white rounded-lg shadow">
+      <div className="text bg-white rounded-lg ">
         <div className="text-lg font-bold pt-4 px-4">ACE Parking Lounge</div>
         <div className="row mx-4 pt-4">
           <div className="px-0 col-7 flex items-center ">
