@@ -21,9 +21,6 @@ code {
 }
 .tableBooking tr:nth-child(even){background-color: #f4f4f4;}
 .card {
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
   width: 100%;
 }
 .user-panel .col-3 {
