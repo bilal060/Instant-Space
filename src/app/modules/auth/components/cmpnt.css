@@ -70,6 +70,22 @@ input[placeholder="Full Name"] {
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+input[id="fullName"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/fullName.svg");
+  background-position: 10px 16px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="Email Address "] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/fullName.svg");
+  background-position: 10px 16px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
 
 input[placeholder="Date of Birth"] {
   background-color: white;
@@ -313,7 +329,7 @@ span{
   height: 53px;
   /* background-color: #1D1D1D !important; */
   color: #A3A3A3;
-  border: 1px solid #6B6B6B;
+  /* border: 1px solid #6B6B6B; */
   border-radius: 5px;
   width: 100%;
   /* padding: 10px 20px; */
@@ -340,6 +356,34 @@ span{
   font-size: 18px;
   line-height: 100%;
 }
+.custom-drop-down {
+  height: 40px;
+  width: 55%;
+  margin-left: 16px;
+  /* background-color: #1D1D1D !important; */
+  color: #A3A3A3;
+  border: 1px solid #6B6B6B;
+  border-radius: 12px;
+  /* width: 100%; */
+  /* padding: 10px 20px; */
+  outline: 0;
+  font-size: 18px;
+  line-height: 100%;
+}
+.custom-drop-down1 {
+  height: 40px;
+  width: 55%;
+  margin-left: 16px;
+  /* background-color: #1D1D1D !important; */
+  color: #A3A3A3;
+  border: 1px solid #6B6B6B;
+  border-radius: 12px;
+  /* width: 100%; */
+  /* padding: 10px 20px; */
+  outline: 0;
+  font-size: 18px;
+  line-height: 100%;
+}
 
 .default-nav{
   opacity: 0;
@@ -354,7 +398,7 @@ input[placeholder="Enter Area Size in Sq. Yd"] {
   font-size: 18px;
 }
 
-button[id="securityType"] {
+select[id="securityType"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/security.svg");
   background-position: 10px 16px;
@@ -381,7 +425,7 @@ input[placeholder="Rate / Hour "] {
   font-size: 18px;
 }
 
-button[id="cctv"] {
+select[id="cctv"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/cctv.svg");
   background-position: 10px 17px;
@@ -390,7 +434,7 @@ button[id="cctv"] {
   font-size: 18px;
 }
 
-button[id="Fuel"] {
+select[id="Fuel"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/fuel.svg");
   background-position: 10px 17px;
@@ -470,9 +514,12 @@ label[id="modal-label"] {
   font-size: 18px;
 }
 
-.custom-tabs-head{
-  width: 80% !important;
+@media screen and (min-width:992px) {
+  .custom-tabs-head{
+    width: 80% !important;
+  }
 }
+
 
 .custom-tabs{
   width:auto !important;
@@ -513,4 +560,8 @@ p[id="TemporaryStorage"]{
   font-size: 16px;
   /* color: rgba(125, 134, 149, 1); */
 
+}
+.custom-button-width{
+  width: 20%;
+  height: 40px !important;
 }

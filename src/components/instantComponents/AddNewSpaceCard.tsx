@@ -8,6 +8,8 @@ import clsx from 'clsx';
 import Tabs from '../../app/modules/auth/components/cmpnt/Tabs';
 import ModalTabs from '../../app/modules/auth/components/cmpnt/Tabs';
 import Form1 from '../../app/modules/auth/components/modalForms/Form1';
+import ManagerForm from '../../app/modules/auth/components/modalForms/ManagerForm';
+
 
 export default function AddNewSpaceCard() {
 
@@ -62,6 +64,7 @@ export default function AddNewSpaceCard() {
                   </label>
                 </div>
                 <ModalTabs tabs={tabs}/>
+                {/* <ManagerForm/> */}
       </div>
       <div className="footer">
         <button type="button" className="btn custom-cancel-button fw-bold mb-8" data-bs-dismiss="modal">Cancel</button>
