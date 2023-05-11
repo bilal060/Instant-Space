@@ -58,7 +58,11 @@ const BarChart1: React.FC<Props> = ({ className }) => {
           id="kt_charts_widget_1_chart"
           style={{ height: '350px' }}
         />
+              {/* <div className='flex justify-center'>
+        Income
+      </div> */}
       </div>
+
     </div>
   );
 };
@@ -214,7 +218,7 @@ function getChartOptions(height: number): ApexOptions {
       yaxis: {
         lines: {
           show: false,
-        },
+        }, 
       },
       
     },

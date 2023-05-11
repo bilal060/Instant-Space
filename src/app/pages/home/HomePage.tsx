@@ -1,5 +1,5 @@
 import React from 'react';
-import SpaceCard from '../../../components/instantComponents/spaceCard';
+import {SpaceCard} from '../../../components/instantComponents/spaceCard';
 import AddNewSpaceCard from '../../../components/instantComponents/AddNewSpaceCard';
 import { BookingsTable } from '../../../components/instantComponents/tableComponents';
 import '../../../index.css';
@@ -26,18 +26,51 @@ export default function HomePage() {
           <div className="row flex flex-wrap mx-0 pt-4">
             <div className="px-0 col-xxl-3 col-md-6 col-12 ">
               <div className="spacing card !bg-transparent pe-sm-4 pr-0">
-                <SpaceCard />
-              </div>
+                <SpaceCard
+                   className=''
+                   img= '/media/icons/cardImages/bg1.svg'
+                   title= "ACE Parking Lounge"
+                   phone= "+1 012 3456 789"
+                   capacity= "300"
+                   address= "Belmont, North Carolina"
+                   type= "Car Parking"
+                   rate="$5"
+                   checked= ""
+                   available= "Available"
+                   gallery= ""
+                />              </div>
             </div>
             <div className="px-0 col-xxl-3 col-md-6 col-12 mt-md-0 mt-8 ">
               <div className="spacing card !bg-transparent  pe-sm-4 pr-0">
-                <SpaceCard />
-              </div>
+                <SpaceCard
+                   className=''
+                   img= '/media/icons/cardImages/bg1.svg'
+                   title= "ACE Parking Lounge"
+                   phone= "+1 012 3456 789"
+                   capacity= "300"
+                   address= "Belmont, North Carolina"
+                   type= "Car Parking"
+                   rate="$5"
+                   checked= ""
+                   available= "Available"
+                   gallery= ""
+                />              </div>
             </div>
             <div className="px-0 col-xxl-3 col-md-6 col-12 pt-xxl-0 pt-8 ">
               <div className="spacing card !bg-transparent  pe-sm-4 pr-0">
-                <SpaceCard />
-              </div>
+                <SpaceCard
+                   className=''
+                   img= '/media/icons/cardImages/bg1.svg'
+                   title= "ACE Parking Lounge"
+                   phone= "+1 012 3456 789"
+                   capacity= "300"
+                   address= "Belmont, North Carolina"
+                   type= "Car Parking"
+                   rate="$5"
+                   checked= ""
+                   available= "Available"
+                   gallery= ""
+                />              </div>
             </div>
             <div className="pe-sm-4 pe-0 ps-0   col-xxl-3 col-md-6 col-12 mt-xxl-0 mt-8   ">
               <div className='w-full h-full bg-white card-shadow rounded-lg flex flex-col justify-center'>
