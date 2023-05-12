@@ -1,5 +1,6 @@
 import React from 'react';
 import { SpaceCard } from '../../../components/instantComponents/spaceCard';
+import { Link } from 'react-router-dom';
 
 export default function MySpaces() {
   return (
@@ -34,7 +35,7 @@ export default function MySpaces() {
       <div className="space-card user-panel">
         <div className="row flex flex-wrap mx-0 pt-4">
           <div className="px-0 col-xxl-3 col-md-6 col-12 ">
-            <div className="spacing card !bg-transparent pe-sm-4 pr-0">
+            <Link to={'/my-spaces/1'} className="text-[#171D25] spacing card !bg-transparent pe-sm-4 pr-0">
               <SpaceCard
                 className=""
                 img="/media/icons/cardImages/bg1.svg"
@@ -48,10 +49,10 @@ export default function MySpaces() {
                 available="Available"
                 gallery=""
               />
-            </div>
+            </Link>
           </div>
           <div className="px-0 col-xxl-3 col-md-6 col-12 mt-md-0 mt-8 ">
-            <div className="spacing card !bg-transparent  pe-sm-4 pr-0">
+            <Link to={'/my-spaces/1'} className="text-[#171D25] spacing card !bg-transparent  pe-sm-4 pr-0">
               <SpaceCard
                 className=""
                 img="/media/icons/cardImages/bg1.svg"
@@ -65,10 +66,10 @@ export default function MySpaces() {
                 available="Available"
                 gallery=""
               />
-            </div>
+            </Link>
           </div>
           <div className="px-0 col-xxl-3 col-md-6 col-12 pt-xxl-0 pt-8 ">
-            <div className="spacing card !bg-transparent  pe-sm-4 pr-0">
+            <Link to={'/my-spaces/1'} className="text-[#171D25] spacing card !bg-transparent  pe-sm-4 pr-0">
               <SpaceCard
                 className=""
                 img="/media/icons/cardImages/bg1.svg"
@@ -82,10 +83,10 @@ export default function MySpaces() {
                 available="Available"
                 gallery=""
               />
-            </div>
+            </Link>
           </div>
           <div className="px-0 col-xxl-3 col-md-6 col-12 pt-xxl-0 pt-8 ">
-            <div className="spacing card !bg-transparent  pe-sm-4 pr-0">
+            <Link to={'/my-spaces/1'} className="text-[#171D25] spacing card !bg-transparent  pe-sm-4 pr-0">
               <SpaceCard
                 className=""
                 img="/media/icons/cardImages/bg1.svg"
@@ -99,14 +100,14 @@ export default function MySpaces() {
                 available="Available"
                 gallery=""
               />
-            </div>
+            </Link>
           </div>
         </div>
       </div>
       <div className="space-card user-panel mt-4">
         <div className="row flex flex-wrap mx-0 pt-4">
           <div className="px-0 col-xxl-3 col-md-6 col-12 ">
-            <div className="spacing card !bg-transparent pe-sm-4 pr-0">
+            <Link to={'/my-spaces/1'} className="text-[#171D25] spacing card !bg-transparent pe-sm-4 pr-0">
               <SpaceCard
                 className=""
                 img="/media/icons/cardImages/bg1.svg"
@@ -120,10 +121,10 @@ export default function MySpaces() {
                 available="Available"
                 gallery=""
               />
-            </div>
+            </Link>
           </div>
           <div className="px-0 col-xxl-3 col-md-6 col-12 mt-md-0 mt-8 ">
-            <div className="spacing card !bg-transparent  pe-sm-4 pr-0">
+            <Link to={'/my-spaces/1'} className="text-[#171D25] spacing card !bg-transparent  pe-sm-4 pr-0">
               <SpaceCard
                 className=""
                 img="/media/icons/cardImages/bg1.svg"
@@ -137,10 +138,10 @@ export default function MySpaces() {
                 available="Available"
                 gallery=""
               />
-            </div>
+            </Link>
           </div>
           <div className="px-0 col-xxl-3 col-md-6 col-12 pt-xxl-0 pt-8 ">
-            <div className="spacing card !bg-transparent  pe-sm-4 pr-0">
+            <Link to={'/my-spaces/1'} className="text-[#171D25] spacing card !bg-transparent  pe-sm-4 pr-0">
               <SpaceCard
                 className=""
                 img="/media/icons/cardImages/bg1.svg"
@@ -154,10 +155,10 @@ export default function MySpaces() {
                 available="Available"
                 gallery=""
               />
-            </div>
+            </Link>
           </div>
           <div className="px-0 col-xxl-3 col-md-6 col-12 pt-xxl-0 pt-8 ">
-            <div className="spacing card !bg-transparent  pe-sm-4 pr-0">
+            <Link to={'/my-spaces/1'} className="text-[#171D25] spacing card !bg-transparent  pe-sm-4 pr-0">
               <SpaceCard
                 className=""
                 img="/media/icons/cardImages/bg1.svg"
@@ -171,7 +172,7 @@ export default function MySpaces() {
                 available="Available"
                 gallery=""
               />
-            </div>
+            </Link>
           </div>
         </div>
       </div>

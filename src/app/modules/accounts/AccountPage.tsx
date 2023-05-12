@@ -1,9 +1,12 @@
 import React from 'react'
-import {Navigate, Route, Routes, Outlet} from 'react-router-dom'
-import {PageLink, PageTitle} from '../../../_metronic/layout/core'
-import {Overview} from './components/Overview'
-import {Settings} from './components/settings/Settings'
-import {AccountHeader} from './AccountHeader'
+import { Route, Routes, Link, useLocation } from 'react-router-dom'
+import { PageLink, PageTitle } from '../../../_metronic/layout/core'
+import AccountEdit from './components/settings/Edit'
+import AccountChangePassword from './components/settings/ChangePassword'
+import AccountFaqs from './components/settings/Faqs'
+import AccountPrivacyPolicy from './components/settings/PrivacyPolicy'
+import AccountVerifyOtp from './components/settings/VerifyOtp'
+import AccountNewPassword from './components/settings/NewPassword'
 
 const accountBreadCrumbs: Array<PageLink> = [
   {
@@ -19,39 +22,165 @@ const accountBreadCrumbs: Array<PageLink> = [
     isActive: false,
   },
 ]
+const settingRoute = [
+  {
+    name: 'Edit Profile',
+    link: '/crafted/account/settings/edit'
+  },
+  {
+    name: 'Change Password',
+    link: '/crafted/account/settings/changepassword'
+  },
+  {
+    name: 'FAQs',
+    link: '/crafted/account/settings/faq'
+  },
+  {
+    name: 'Privacy Policy',
+    link: '/crafted/account/settings/privacy'
+  },
+]
 
 const AccountPage: React.FC = () => {
+  const location = useLocation()
+
   return (
-    <Routes>
-      <Route
-        element={
-          <>
-            <AccountHeader />
-            <Outlet />
-          </>
-        }
-      >
+    <>
+      <h3 className='text-[24px] mb-4 font-bold'>Account Settings</h3>
+      <div className='row m-0'>
+        <div className='col-3 ps-0'>
+          <div className='card card-flush card-shadow p-5'>
+            {settingRoute.map((data, index) => {
+              return (
+                <Link key={index} to={data.link} className={`${data.link === location.pathname || location.pathname.includes(data.link) ? 'bg-[#F0F6FF] text-primary font-semibold' : ''} text-[#7D8695] p-3 text-[18px]`}>{data.name}</Link>
+              )
+            })}
+
+
+          </div>
+        </div>
+        <div className='col-9'>
+          <div className='card card-flush card-shadow p-5'>
+            <Routes>
+              <Route
+                path='settings/edit'
+                element={
+                  <>
+                    <PageTitle breadcrumbs={accountBreadCrumbs}>Edit</PageTitle>
+                    <AccountEdit />
+                  </>
+                }
+              />
+              <Route
+                path='settings/changepassword'
+                element={
+                  <>
+                    <PageTitle breadcrumbs={accountBreadCrumbs}>Settings</PageTitle>
+                    <AccountChangePassword />
+                  </>
+                }
+              />
+              <Route
+                path='settings/changepassword/verifyotp'
+                element={
+                  <>
+                    <PageTitle breadcrumbs={accountBreadCrumbs}>Verify Otp</PageTitle>
+                    <AccountVerifyOtp />
+                  </>
+                }
+              />
+              <Route
+                path='settings/changepassword/newpassword'
+                element={
+                  <>
+                    <PageTitle breadcrumbs={accountBreadCrumbs}>New Password</PageTitle>
+                    <AccountNewPassword />
+                  </>
+                }
+              />
+              <Route
+                path='settings/faq'
+                element={
+                  <>
+                    <PageTitle breadcrumbs={accountBreadCrumbs}>Settings</PageTitle>
+                    <AccountFaqs />
+                  </>
+                }
+              />
+              <Route
+                path='settings/privacy'
+                element={
+                  <>
+                    <PageTitle breadcrumbs={accountBreadCrumbs}>Settings</PageTitle>
+                    <AccountPrivacyPolicy />
+                  </>
+                }
+              />
+            </Routes>
+          </div>
+
+        </div>
+
+
+      </div>
+      {/* <Routes>
         <Route
-          path='overview'
           element={
             <>
-              <PageTitle breadcrumbs={accountBreadCrumbs}>Overview</PageTitle>
-              <Overview />
+              <AccountHeader />
+              <Outlet />
             </>
           }
-        />
-        <Route
-          path='settings'
-          element={
-            <>
-              <PageTitle breadcrumbs={accountBreadCrumbs}>Settings</PageTitle>
-              <Settings />
-            </>
-          }
-        />
-        <Route index element={<Navigate to='/crafted/account/overview' />} />
-      </Route>
-    </Routes>
+        >
+          <Route
+            path='overview'
+            element={
+              <>
+                <PageTitle breadcrumbs={accountBreadCrumbs}>Overview</PageTitle>
+                <Overview />
+              </>
+            }
+          />
+          <Route
+            path='settings/edit'
+            element={
+              <>
+                <PageTitle breadcrumbs={accountBreadCrumbs}>Settings</PageTitle>
+                <Settings />
+              </>
+            }
+          />
+          <Route
+            path='settings/changepassword'
+            element={
+              <>
+                <PageTitle breadcrumbs={accountBreadCrumbs}>Settings</PageTitle>
+                <Settings />
+              </>
+            }
+          />
+          <Route
+            path='settings/faq'
+            element={
+              <>
+                <PageTitle breadcrumbs={accountBreadCrumbs}>Settings</PageTitle>
+                <Settings />
+              </>
+            }
+          />
+          <Route
+            path='settings/privacy'
+            element={
+              <>
+                <PageTitle breadcrumbs={accountBreadCrumbs}>Settings</PageTitle>
+                <Settings />
+              </>
+            }
+          />
+          <Route index element={<Navigate to='/crafted/account/overview' />} />
+        </Route>
+      </Routes> */}
+    </>
   )
 }
 
