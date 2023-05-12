@@ -25,18 +25,22 @@ const accountBreadCrumbs: Array<PageLink> = [
 const settingRoute = [
   {
     name: 'Edit Profile',
+    img:'/images/icons/editprofile.svg',
     link: '/crafted/account/settings/edit'
   },
   {
     name: 'Change Password',
+    img:'/images/icons/changePassword.svg',
     link: '/crafted/account/settings/changepassword'
   },
   {
     name: 'FAQs',
+    img:'/images/icons/faq.svg',
     link: '/crafted/account/settings/faq'
   },
   {
     name: 'Privacy Policy',
+    img:'/images/icons/policy.svg',
     link: '/crafted/account/settings/privacy'
   },
 ]
@@ -49,10 +53,13 @@ const AccountPage: React.FC = () => {
       <h3 className='text-[24px] mb-4 font-bold'>Account Settings</h3>
       <div className='row m-0'>
         <div className='col-xxl-3 col-xl-4 ps-xl-0 pe-xl-5 p-0 mb-xl-0 mb-8'>
-          <div className='card card-flush card-shadow p-5'>
+          <div className='card card-flush card-shadow p-5 account-setting'>
             {settingRoute.map((data, index) => {
               return (
-                <Link key={index} to={data.link} className={`${data.link === location.pathname || location.pathname.includes(data.link) ? 'bg-[#F0F6FF] text-primary font-semibold' : ''} text-[#7D8695] p-3 text-[18px]`}>{data.name}</Link>
+                <Link key={index} to={data.link} className={`${data.link === location.pathname || location.pathname.includes(data.link) ? 'bg-[#F0F6FF] text-primary font-semibold active' : ''} link flex gap-[15px] items-center text-[#7D8695] p-3 text-[18px]`}>
+                  <img src={data.img} alt=""/> 
+                  {data.name}
+                  </Link>
               )
             })}
 

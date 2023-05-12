@@ -414,3 +414,6 @@ span {
   border-radius: 6px !important;
   border: 3px solid #F8F8F8;
 }
+.account-setting .link.active img path{
+  fill:#0064FA;
+ }
