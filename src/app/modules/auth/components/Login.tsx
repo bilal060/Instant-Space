@@ -12,6 +12,11 @@ import Logo from './cmpnt/logo'
 import AuthHead from './cmpnt/authHead'
 import AuthDesc from './cmpnt/authDesc'
 import ButtonDesc from './cmpnt/buttonDesc'
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { userLogin } from '../../../../store/storeIndex'
+import { useNavigate } from 'react-router-dom'
+
 import "./cmpnt.css"
 
 const loginSchema = Yup.object().shape({
@@ -27,39 +32,58 @@ const loginSchema = Yup.object().shape({
 })
 
 const initialValues = {
-  email: 'admin@demo.com',
-  password: 'demo',
+  email: '',
+  password: '',
 }
 
-/*
-  Formik+YUP+Typescript:
-  https://jaredpalmer.com/formik/docs/tutorial#getfieldprops
-  https://medium.com/@maurice.de.beijer/yup-validation-and-typescript-and-formik-6c342578a20e
-*/
+
 
 export function Login() {
   const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues,
     validationSchema: loginSchema,
     onSubmit: async (values, {setStatus, setSubmitting}) => {
-      setLoading(true)
-      try {
-        const {data: auth} = await login(values.email, values.password)
-        saveAuth(auth)
-        const {data: user} = await getUserByToken(auth.api_token)
-        setCurrentUser(user)
-      } catch (error) {
-        console.error(error)
-        saveAuth(undefined)
-        setStatus('The login details are incorrect')
-        setSubmitting(false)
-        setLoading(false)
-      }
+      // setLoading(true)
+      // try {
+      //   const {data: auth} = await login(values.email, values.password)
+      //   saveAuth(auth)
+      //   const {data: user} = await getUserByToken(auth.api_token)
+      //   setCurrentUser(user)
+      // } catch (error) {
+      //   console.error(error)
+      //   saveAuth(undefined)
+      //   setStatus('The login details are incorrect')
+      //   setSubmitting(false)
+      //   setLoading(false)
+      // }
+      const data = {
+        email: values.email,
+        password: values.password
+    }
+      dispatch(userLogin(data, navigate))
     },
   })
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios.post('api/v1/users/login', { email, password })
+      .then((response) => {
+        // Handle successful login here
+      })
+      .catch((error) => {
+        // Handle login error here
+      });
+  };
+
 return (
     <form
       className='form w-100'
@@ -92,6 +116,7 @@ return (
           type='email'
           name='email'
           autoComplete='off'
+          value={email}
         />
         {formik.touched.email && formik.errors.email && (
           <div className='fv-plugins-message-container'>
@@ -115,6 +140,8 @@ return (
               'is-valid': formik.touched.password && !formik.errors.password,
             }
           )}
+          name='password'
+          value={password}
         />
         {formik.touched.password && formik.errors.password && (
           <div className='fv-plugins-message-container'>
@@ -132,7 +159,7 @@ return (
                   </div>
               </Link>
 
-              <button className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-14">
+              <button type="submit" className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-14">
                 Login
               </button>
 

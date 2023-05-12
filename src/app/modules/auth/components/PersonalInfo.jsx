@@ -145,14 +145,14 @@ export function PersonalInfo() {
              
         
 
-                    <div id='phone' className='form-control p-0 bg-transparent border-0 mb-4'>
-                        <div className='custom-phone-input auth-input d-flex align-items-center'>
+      <div id='phone' className='form-control p-0 bg-transparent mb-4 '>
+                        <div className='custom-phone-input auth-input d-flex align-items-center '>
                             <CountrySelect
                                 labels={en}
                                 value={country}
                                 onChange={setCountry}
                                 id="phone"
-                                className='bg-transparent outline-0 border-0 custom-phone-dropdown-btn font-18-100 ml-11'
+                                className='bg-transparent outline-0 custom-phone-dropdown-btn font-18-100 ml-11'
                             />
                             <PhoneInput
                                 countrySelectProps={{ unicodeFlags: false }}
@@ -160,7 +160,7 @@ export function PersonalInfo() {
                                 value={value}
                                 onChange={setvalue}
                                 buttonClass='d-none'
-                                inputClass='bg-transparent outline-0 shadow-none custom-phone-input-1 font-18-100'
+                                inputClass='bg-transparent shadow-none custom-phone-input-1 font-18-100'
                             />
                         </div>
                     </div>

@@ -111,7 +111,7 @@ export default function Form() {
                                   <input
                                       placeholder='Rate / Hour '
                                       className={clsx('form-control w-100 border border-solid h-18 rounded-lg inputText mb-4 bg-transparent')}
-                                      type='email'
+                                      type='text'
                                       name='email'
                                       autoComplete='off'
                                   />
@@ -122,7 +122,7 @@ export default function Form() {
                                   <input
                                       placeholder='Rate / Hour '
                                       className={clsx('form-control w-100 border border-solid h-18 rounded-lg inputText mb-4 bg-transparent')}
-                                      type='email'
+                                      type='text'
                                       name='email'
                                       autoComplete='off'
                                   />
@@ -133,7 +133,7 @@ export default function Form() {
                                   <input
                                       placeholder='Rate / Hour '
                                       className={clsx('form-control w-100 border border-solid h-18 rounded-lg inputText mb-4 bg-transparent')}
-                                      type='email'
+                                      type='text'
                                       name='email'
                                       autoComplete='off'
                                   />
@@ -144,7 +144,7 @@ export default function Form() {
                                   <input
                                       placeholder='Rate / Hour '
                                       className={clsx('form-control w-100 border border-solid h-18 rounded-lg inputText mb-4 bg-transparent')}
-                                      type='email'
+                                      type='text'
                                       name='email'
                                       autoComplete='off'
                                   />

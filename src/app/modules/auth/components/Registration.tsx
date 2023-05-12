@@ -14,16 +14,15 @@ import Logo from './cmpnt/logo'
 import AuthHead from './cmpnt/authHead'
 import AuthDesc from './cmpnt/authDesc'
 import ButtonDesc from './cmpnt/buttonDesc'
-import { DropDown } from './cmpnt/dropDown'
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { userRegister } from '../../../../store/storeIndex'
+import { useNavigate } from 'react-router-dom'
+import { Value } from 'sass'
 
-const initialValues = {
-  firstname: '',
-  lastname: '',
-  email: '',
-  password: '',
-  changepassword: '',
-  acceptTerms: false,
-}
+
+
+
 
 const registrationSchema = Yup.object().shape({
   firstname: Yup.string()
@@ -52,34 +51,58 @@ const registrationSchema = Yup.object().shape({
   acceptTerms: Yup.bool().required('You must accept the terms and conditions'),
 })
 
+const initialValues = {
+  email:"sh.hafizhasnain@gmail.com",
+  password:"123456789",
+  passwordConfirm: "123456789",
+  role:"Business Owner"
+}
+
 export function Registration() {
   const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues,
     validationSchema: registrationSchema,
     onSubmit: async (values, {setStatus, setSubmitting}) => {
-      setLoading(true)
-      try {
-        const {data: auth} = await register(
-          values.email,
-          values.firstname,
-          values.lastname,
-          values.password,
-          values.changepassword
-        )
-        saveAuth(auth)
-        const {data: user} = await getUserByToken(auth.api_token)
-        setCurrentUser(user)
-      } catch (error) {
-        console.error(error)
-        saveAuth(undefined)
-        setStatus('The registration details is incorrect')
-        setSubmitting(false)
-        setLoading(false)
-      }
+      // setLoading(true)
+      // try {
+      //   const {data: auth} = await register(
+      //     values.email,
+      //     values.firstname,
+      //     values.lastname,
+      //     values.password,
+      //     values.changepassword
+      //   )
+      //   saveAuth(auth)
+      //   const {data: user} = await getUserByToken(auth.api_token)
+      //   setCurrentUser(user)
+      // } catch (error) {
+      //   console.error(error)
+      //   saveAuth(undefined)
+      //   setStatus('The registration details is incorrect')
+      //   setSubmitting(false)
+      //   setLoading(false)
+      // }
+
+      const data = {
+        email: values.email,
+        password: values.password,
+        passwordConfirm: values.passwordConfirm,
+        role: values.role
+    }
+      dispatch(userRegister(data, navigate))
+
     },
   })
+  const [role, setRole] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
 
   useEffect(() => {
     PasswordMeterComponent.bootstrap()
@@ -106,13 +129,15 @@ export function Registration() {
       <div className='fv-row '>
 
         
-      <div className="lg:mt-4 md:mt-4 sm:mt-4">
-            <DropDown
-              // className="mb-xl-8"
-              color="danger"
-              title="Select Role"
-            />
-          </div>
+              <div className="lg:mt-4 md:mt-4 sm:mt-4">
+                <div className='col-md-12 bg-transparent mb-4'>
+                  <select className='auth-input height-56 border-2 border-solid !border-[#7D8695] bg-transparent' id="Role" name='role' value={role}>
+                    <option defaultValue>Select Role</option>
+                    <option>Customer</option>
+                    <option>Business Owner</option>
+                  </select>
+                </div>
+              </div>
 
 
         <input
@@ -127,6 +152,7 @@ export function Registration() {
           )}
           type='email'
           name='email'
+          value={email}
           autoComplete='off'
         />
         {formik.touched.email && formik.errors.email && (
@@ -151,6 +177,7 @@ export function Registration() {
               'is-valid': formik.touched.password && !formik.errors.password,
             }
           )}
+          value={password}
         />
         {formik.touched.password && formik.errors.password && (
           <div className='fv-plugins-message-container'>
@@ -181,7 +208,9 @@ export function Registration() {
             {
               'is-valid': formik.touched.password && !formik.errors.password,
             }
+            
           )}
+          value={passwordConfirm}
         />
         {formik.touched.password && formik.errors.password && (
           <div className='fv-plugins-message-container'>

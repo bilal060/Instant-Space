@@ -136,6 +136,14 @@ input[placeholder="Enter Email OTP"] {
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+input[placeholder="Card Number "] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/card.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
 input[id="dropdown"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/dropdown.svg");
@@ -370,19 +378,41 @@ span{
   font-size: 18px;
   line-height: 100%;
 }
-.custom-drop-down1 {
-  height: 40px;
-  width: 55%;
-  margin-left: 16px;
-  /* background-color: #1D1D1D !important; */
-  color: #A3A3A3;
-  border: 1px solid #6B6B6B;
-  border-radius: 12px;
-  /* width: 100%; */
-  /* padding: 10px 20px; */
-  outline: 0;
-  font-size: 18px;
-  line-height: 100%;
+@media screen and (min-width:1025px) {
+
+  .custom-drop-down1 {
+    height: 40px;
+    width: 55%;
+    margin-left: 16px;
+    /* background-color: #1D1D1D !important; */
+    color: #A3A3A3;
+    border: 1px solid #6B6B6B;
+    border-radius: 12px;
+    /* width: 100%; */
+    /* padding: 10px 20px; */
+    outline: 0;
+    font-size: 18px;
+    line-height: 100%;
+  }
+
+}
+@media screen and (max-width:1024px) {
+
+  .custom-drop-down1 {
+    height: 40px;
+    width: 85%;
+    /* margin-left: 16px; */
+    /* background-color: #1D1D1D !important; */
+    color: #A3A3A3;
+    border: 1px solid #6B6B6B;
+    border-radius: 12px;
+    /* width: 100%; */
+    /* padding: 10px 20px; */
+    outline: 0;
+    font-size: 18px;
+    line-height: 100%;
+  }
+
 }
 
 .default-nav{
@@ -424,6 +454,22 @@ input[placeholder="Rate / Hour "] {
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+input[placeholder="Expiry Date "] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/expiry.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="CVV "] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/card.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
 
 select[id="cctv"] {
   background-color: white;
@@ -442,6 +488,16 @@ select[id="Fuel"] {
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+
+select[id="Role"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/fullName.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+
 
 input[placeholder="Enter Location "] {
   background-color: white;
@@ -562,6 +618,8 @@ p[id="TemporaryStorage"]{
 
 }
 .custom-button-width{
-  width: 20%;
-  height: 40px !important;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 38px !important;
 }

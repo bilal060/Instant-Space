@@ -31,8 +31,8 @@
   margin-top: 10px !important;
 }
 .fc-daygrid-day {
-  height: 6.4rem !important;
-  width: 4.6rem !important;
+  height: 6rem !important;
+  width: 4.4rem !important;
 }
 tr .fc-day-other:hover div div a:not(:hover) {
     background-color:  #f4f4f4 !important;
@@ -57,7 +57,7 @@ tr .fc-day-other:hover {
     color: white !important;
 }
 .fc-media-screen:nth-child(1) {
-  height: 37.5rem !important;
+  height: 35.5rem !important;
 }
 .fc-scroller-harness > .fc-scroller {
   overflow: hidden !important;
@@ -185,4 +185,14 @@ tr .fc-day-other:hover {
   content: '\e900';
   position: absolute;
   left: -1px;
+}
+@media screen and (max-width: 767.98px){
+.fc .fc-header-toolbar {
+    flex-direction: row;
+    align-items: flex-start;
+}
+}
+
+.fc-theme-standard .fc-scrollgrid {
+    border: 1px solid #E7E6E9 !important; 
 }

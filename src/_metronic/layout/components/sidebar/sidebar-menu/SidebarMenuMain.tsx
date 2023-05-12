@@ -35,7 +35,7 @@ const SidebarMenuMain = () => {
         fontIcon="bi-app-indicator"
       />
       <SidebarMenuItem
-        to="/Payment History"
+        to="/payment-history"
         icon="/media/icons/InstantIcons/Payment.svg"
         title="Payment History"
         fontIcon="bi-app-indicator"
