@@ -1,7 +1,6 @@
-
 @media screen and (max-width:992px) {
-  .rounded-img{
+  .rounded-img {
     border-radius: 10px !important;
   }
-  
+
 }
