@@ -2,7 +2,7 @@ import React from 'react'
 
 const AccountPrivacyPolicy = () => {
     return (
-        <div>
+        <div className='privacy-policy'>
             <h3 className='fs-1 mb-8 font-bold'>Privacy Policy</h3>
             <p className='text-gray font-lg h-[612px] overflow-y-auto pe-12'>
                 Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec.Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec.Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec.

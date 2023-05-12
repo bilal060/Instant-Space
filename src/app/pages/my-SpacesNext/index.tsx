@@ -106,7 +106,7 @@ const MySpaceNext = () => {
                                 </div>
 
                                 <div className="row m-0 pt-4">
-                                    <div className="px-0 col-6 flex items-center ">
+                                    <div className="px-0 col-sm-6 flex items-center mb-sm-0 mb-4">
                                         <img
                                             alt=""
                                             src="/media/icons/cardIcons/phone.svg"
@@ -114,7 +114,7 @@ const MySpaceNext = () => {
                                         />
                                         <label className="fs-2 pl-5">+1 012 3456 769</label>
                                     </div>
-                                    <div className="px-0 col-6 flex items-center">
+                                    <div className="px-0 col-sm-6 flex items-center">
                                         <img
                                             alt=""
                                             src="/media/icons/cardIcons/flag.svg"
@@ -124,7 +124,7 @@ const MySpaceNext = () => {
                                     </div>
                                 </div>
                                 <div className="row m-0 py-4 ">
-                                    <div className="px-0 col-6 flex items-center">
+                                    <div className="px-0 col-sm-6 flex items-center mb-sm-0 mb-4">
                                         <img
                                             alt=""
                                             src="/media/icons/cardIcons/space.svg"
@@ -132,7 +132,7 @@ const MySpaceNext = () => {
                                         />
                                         <label className="fs-2 pl-5">Type: Car Parking</label>
                                     </div>
-                                    <div className="px-0 col-6 flex items-center">
+                                    <div className="px-0 col-sm-6 flex items-center">
                                         <img
                                             alt=""
                                             src="/media/icons/cardIcons/dollar.svg"
@@ -185,10 +185,10 @@ const MySpaceNext = () => {
                                 </div>
                                 <div className="border-b my-5"></div>
                                 <p className='text-lg font-semibold'>Managers</p>
-                                <div className='mt-5 flex flex-column managers'>
+                                <div className='mt-5 flex flex-column managers overflow-x-auto'>
                                     {managers.map((data, index) => {
                                         return (
-                                            <div className='flex items-center justify-between w-100 managerno' key={index}>
+                                            <div className='flex items-center justify-between managerno sm:!w-full !w-max sm:!gap-3 !gap-10' key={index}>
                                                 <div className='flex gap-3'>
                                                     <img src={data.img} alt="" />
                                                     <div>

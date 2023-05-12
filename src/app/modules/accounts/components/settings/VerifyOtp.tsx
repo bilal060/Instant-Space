@@ -16,7 +16,7 @@ const AccountVerifyOtp = () => {
             <form className='w-100'>
 
                 <div className='flex flex-column gap-4'>
-                    <div className='flex gap-5 items-center pb-1'>
+                    <div className='flex gap-5 items-center pb-1 flex-sm-row flex-column'>
                         <input
                             placeholder="Enter Email OTP"
                             className="form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText bg-transparent"
@@ -26,7 +26,7 @@ const AccountVerifyOtp = () => {
                         />
                         <button
                             onClick={(e) => submitHandler(e)}
-                            className="!text-[#ffff] !bg-[#0064FA] form-control w-max !rounded-lg !font-semibold !text-xl !w-2/6">
+                            className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-lg !font-semibold !text-xl sm:!w-2/6 w-full">
                             Verify
                         </button>
                     </div>

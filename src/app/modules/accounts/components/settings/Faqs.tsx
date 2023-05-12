@@ -1,47 +1,93 @@
 import React from 'react'
 
+
+const faqs = [
+  {
+    id: 'heading1',
+    collapse: 'collapse1',
+    show: true,
+    heading: 'Lorem ipsum dolor sit amet consr.?',
+    detail: 'Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec.Lorem ipsu consectetur. Pretium lacus congue maec.'
+  },
+  {
+    id: 'heading2',
+    collapse: 'collapse2',
+    show: false,
+    heading: 'Lorem ipsum dolor sit amet consr.?',
+    detail: 'Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec.Lorem ipsu consectetur. Pretium lacus congue maec.'
+  },
+  {
+    id: 'heading3',
+    collapse: 'collapse3',
+    show: false,
+    heading: 'Lorem ipsum dolor sit amet consr.?',
+    detail: 'Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec.Lorem ipsu consectetur. Pretium lacus congue maec.'
+  },
+  {
+    id: 'heading4',
+    collapse: 'collapse4',
+    show: false,
+    heading: 'Lorem ipsum dolor sit amet consr.?',
+    detail: 'Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec.Lorem ipsu consectetur. Pretium lacus congue maec.'
+  },
+  {
+    id: 'heading5',
+    collapse: 'collapse5',
+    show: false,
+    heading: 'Lorem ipsum dolor sit amet consr.?',
+    detail: 'Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec.Lorem ipsu consectetur. Pretium lacus congue maec.'
+  },
+  {
+    id: 'heading6',
+    collapse: 'collapse6',
+    show: false,
+    heading: 'Lorem ipsum dolor sit amet consr.?',
+    detail: 'Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec.Lorem ipsu consectetur. Pretium lacus congue maec.'
+  },
+  {
+    id: 'heading7',
+    collapse: 'collapse7',
+    show: false,
+    heading: 'Lorem ipsum dolor sit amet consr.?',
+    detail: 'Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec.Lorem ipsu consectetur. Pretium lacus congue maec.'
+  },
+  {
+    id: 'heading8',
+    collapse: 'collapse8',
+    show: false,
+    heading: 'Lorem ipsum dolor sit amet consr.?',
+    detail: 'Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec. Lorem ipsum dolor sit amet consectetur. Pretium lacus congue maec.Lorem ipsu consectetur. Pretium lacus congue maec.'
+  },
+]
 const AccountFaqs = () => {
   return (
     <div>
       <h3 className='text-[24px] font-bold !mb-[40px]'>Acceptance of the Privacy Policy</h3>
-
+      <div className='rounded-lg bg-[#F8F8F8] p-[16px] flex items-center gap-3'>
+        <input type='text' placeholder='Search' className='border-0 outline-0 h-100 w-100 bg-transparent text-[16px]' />
+        <img src='/media/icons/cardIcons/search.svg' alt='' />
+      </div>
       <div className="accordion" id="accordionExample">
-        <div className="accordion-item">
-          <h2 className="accordion-header" id="headingOne">
-            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Accordion Item #1
-            </button>
-          </h2>
-          <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div className="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header" id="headingTwo">
-            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Accordion Item #2
-            </button>
-          </h2>
-          <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div className="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header" id="headingThree">
-            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Accordion Item #3
-            </button>
-          </h2>
-          <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div className="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
+        {
+          faqs.map((data, index) => {
+            return (
+              <div className="accordion-item" key={index}>
+                <h2 className="accordion-header" id={data.id}>
+                  <button className={`accordion-button !bg-white !text-[#171D25] !text-[16px] font-normal ${data.show ? '' : 'collapsed'}`} type="button" data-bs-toggle="collapse" data-bs-target={`#${data.collapse}`} aria-expanded="true" aria-controls={data.collapse}>
+                    {data.heading}
+                  </button>
+                </h2>
+                <div id={data.collapse} className={`accordion-collapse collapse ${data.show ? 'show' : ''}`} aria-labelledby={data.id} data-bs-parent="#accordionExample">
+                  <div className="accordion-body">
+                    <p className='text-primary font-semibold !text-[18px] mb-[8px]'>Lorem ipsum dolor sit.?</p>
+                    <p className='text-gray !text-[14px]'>{data.detail}</p>
+                  </div>
+                </div>
+              </div>
+            )
+          })
+        }
+
       </div>
 
 

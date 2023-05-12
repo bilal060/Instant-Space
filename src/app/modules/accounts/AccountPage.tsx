@@ -48,7 +48,7 @@ const AccountPage: React.FC = () => {
     <>
       <h3 className='text-[24px] mb-4 font-bold'>Account Settings</h3>
       <div className='row m-0'>
-        <div className='col-3 ps-0'>
+        <div className='col-xxl-3 col-xl-4 ps-xl-0 pe-xl-5 p-0 mb-xl-0 mb-8'>
           <div className='card card-flush card-shadow p-5'>
             {settingRoute.map((data, index) => {
               return (
@@ -59,7 +59,7 @@ const AccountPage: React.FC = () => {
 
           </div>
         </div>
-        <div className='col-9'>
+        <div className='col-xxl-9 col-xl-8 pe-xl-0 ps-xl-2 p-0'>
           <div className='card card-flush card-shadow p-5'>
             <Routes>
               <Route
