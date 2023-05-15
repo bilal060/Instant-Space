@@ -31,7 +31,7 @@ const Navbar = () => {
           <KTSVG path='/media/icons/duotune/general/gen032.svg' className={btnIconClass} />
         </div>
       </div> */}
-      <div className="button flex py-5 gap-4 mr-8">
+      <div className="button flex py-3 gap-4 mr-8">
         <button
           className="px-5 py-2 bg-[#0064FA] text-white rounded-xl flex items-center"
           onClick={() => setLanguage('en')}

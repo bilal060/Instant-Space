@@ -99,9 +99,9 @@ return(
       <div className="border-b-2"></div>
       <div className="row mx-4 py-4">
         <div className="px-0 col-7 flex items-center">
-          <div className="form-switch flex !pt-[1px] !p-0">
+          <div className="form-switch flex  !p-0">
             <input
-              className="form-check-input !w-9 !h-5 !ml-0"
+              className="form-check-input !w-9 !h-5 !mt-0 !ml-0"
               type="checkbox"
               role="switch"
               id="flexSwitchCheckChecked"
