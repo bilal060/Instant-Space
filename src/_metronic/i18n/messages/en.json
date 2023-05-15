@@ -150,6 +150,36 @@
   "Notifications.Description3": "Truck Parking",
   "Notifications.Description4": "10:30 AM  |  May 3, 2023",
   "Notifications.Paid": "Paid",
-  "Notifications.Cancelled": "Cancelled"
+  "Notifications.Cancelled": "Cancelled",
+
+  "SpaceCardDetail.Title": "ACE Parking Lounge",
+  "SpaceCardDetail.Phone": "+1 012 3456 789",
+  "SpaceCardDetail.Capacity": "300",
+  "SpaceCardDetail.Address": "Belmont, North Carolina",
+  "SpaceCardDetail.Type": "Car Parking",
+  "SpaceCardDetail.Rate": "$5",
+  "SpaceCardDetail.Status": "Available",
+  "SpaceCardDetail.CapacityHead": "Capacity",
+  "SpaceCardDetail.TypeHead": "Type",
+  "SpaceCardDetail.RateHead": "Rate",
+  "SpaceCardDetail.AddNewCard": "Add New Space",
+  "SpaceCardDetail.UploadPicture": "Upload Picture",
+  "SpaceCardDetail.Facilities": "Upload Picture",
+
+  "Managers.Title": "Managers",
+  "Managers.NameHead": "Full Name",
+  "Managers.ContactHead": "Contact Info",
+  "Managers.TimeHead": "Shift Time Slot",
+  "Managers.Name": "Tony Stark",
+  "Managers.Contact": "+1 012 345 6789",
+  "Managers.Time": "09:00 am to 05:00 pm",
+
+  "Reviews.Title":"",
+  "Reviews.Name":"",
+  "Reviews.rating":"",
+  "Reviews.Comment":""
+
+
+
 
 }

@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import {FC, useEffect, useRef} from 'react'
 import {KTSVG} from '../../../../helpers'
 import {getCSSVariableValue} from '../../../../assets/ts/_utils'

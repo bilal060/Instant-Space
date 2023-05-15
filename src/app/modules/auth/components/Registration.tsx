@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-target-blank */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import {useState, useEffect} from 'react'
 import React from 'react'
 import {useFormik} from 'formik'

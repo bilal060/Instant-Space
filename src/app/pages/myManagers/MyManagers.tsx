@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookingsTable } from '../../../components/instantComponents/tableComponents';
+import BookingTable from '../../../components/instantComponents/tableComponents';
 import '../../../index.css'
 import ManagerForm from '../../modules/auth/components/modalForms/ManagerForm';
 import clsx from 'clsx';
@@ -76,7 +76,7 @@ export default function MyManagers() {
                   </tr>
                 </thead>
                 <tbody>
-                  {BookingsTable.map((data, index) => {
+                  {BookingTable.map((data, index) => {
                     return (
                       <tr key={index}>
                         <td className="">

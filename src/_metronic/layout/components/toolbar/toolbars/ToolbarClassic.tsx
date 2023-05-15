@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import clsx from 'clsx'
 import {useState} from 'react'
 import {KTSVG} from '../../../../helpers'
