@@ -1,16 +1,167 @@
 import React from 'react';
-import BookingTable from '../../../components/instantComponents/tableComponents';
 import '../../../index.css';
 import ManagerForm from '../../modules/auth/components/modalForms/ManagerForm';
 import clsx from 'clsx';
 import { PaymentHistoryCard } from '../../../components/instantComponents/PaymentHistoryCard';
 import PaymentForm from '../../modules/auth/components/modalForms/PaymentForm';
 export default function PaymentHistory() {
+  const PaymentTable = [
+    {
+      fname: 'Tony',
+      lname: 'Starc',
+      location1: 'Belmont',
+      location2: 'North Carolina',
+      contact: '+1 012 345 6789',
+      Ftime: '10:30 AM',
+      Fdate: 'May 3, 2023',
+      Ttime: '11:30 AM',
+      Tdate: 'May 3, 2023',
+      type: 'Truck Parking',
+      amount: '$5',
+      status: 'Paid',
+      threedots: '/media/icons/cardIcons/threeDots.svg',
+    },
+    {
+      fname: 'Tony',
+      lname: 'Starc',
+      location1: 'Belmont',
+      location2: 'North Carolina',
+      contact: '+1 012 345 6789',
+      Ftime: '10:30 AM',
+      Fdate: 'May 3, 2023',
+      Ttime: '11:30 AM',
+      Tdate: 'May 3, 2023',
+      type: 'Truck Parking',
+      amount: '$5',
+      status: 'Paid',
+      threedots: '/media/icons/cardIcons/threeDots.svg',
+    },
+    {
+      fname: 'Tony',
+      lname: 'Starc',
+      location1: 'Belmont',
+      location2: 'North Carolina',
+      contact: '+1 012 345 6789',
+      Ftime: '10:30 AM',
+      Fdate: 'May 3, 2023',
+      Ttime: '11:30 AM',
+      Tdate: 'May 3, 2023',
+      type: 'Truck Parking',
+      amount: '$5',
+      status: 'Paid',
+      threedots: '/media/icons/cardIcons/threeDots.svg',
+    },
+    {
+      fname: 'Tony',
+      lname: 'Starc',
+      location1: 'Belmont',
+      location2: 'North Carolina',
+      contact: '+1 012 345 6789',
+      Ftime: '10:30 AM',
+      Fdate: 'May 3, 2023',
+      Ttime: '11:30 AM',
+      Tdate: 'May 3, 2023',
+      type: 'Truck Parking',
+      amount: '$5',
+      status: 'Paid',
+      threedots: '/media/icons/cardIcons/threeDots.svg',
+    },
+    {
+      fname: 'Tony',
+      lname: 'Starc',
+      location1: 'Belmont',
+      location2: 'North Carolina',
+      contact: '+1 012 345 6789',
+      Ftime: '10:30 AM',
+      Fdate: 'May 3, 2023',
+      Ttime: '11:30 AM',
+      Tdate: 'May 3, 2023',
+      type: 'Truck Parking',
+      amount: '$5',
+      status: 'Paid',
+      threedots: '/media/icons/cardIcons/threeDots.svg',
+    },
+    {
+      fname: 'Tony',
+      lname: 'Starc',
+      location1: 'Belmont',
+      location2: 'North Carolina',
+      contact: '+1 012 345 6789',
+      Ftime: '10:30 AM',
+      Fdate: 'May 3, 2023',
+      Ttime: '11:30 AM',
+      Tdate: 'May 3, 2023',
+      type: 'Truck Parking',
+      amount: '$5',
+      status: 'Paid',
+      threedots: '/media/icons/cardIcons/threeDots.svg',
+    },
+    {
+      fname: 'Tony',
+      lname: 'Starc',
+      location1: 'Belmont',
+      location2: 'North Carolina',
+      contact: '+1 012 345 6789',
+      Ftime: '10:30 AM',
+      Fdate: 'May 3, 2023',
+      Ttime: '11:30 AM',
+      Tdate: 'May 3, 2023',
+      type: 'Truck Parking',
+      amount: '$5',
+      status: 'Paid',
+      threedots: '/media/icons/cardIcons/threeDots.svg',
+    },
+    {
+      fname: 'Tony',
+      lname: 'Starc',
+      location1: 'Belmont',
+      location2: 'North Carolina',
+      contact: '+1 012 345 6789',
+      Ftime: '10:30 AM',
+      Fdate: 'May 3, 2023',
+      Ttime: '11:30 AM',
+      Tdate: 'May 3, 2023',
+      type: 'Truck Parking',
+      amount: '$5',
+      status: 'Paid',
+      threedots: '/media/icons/cardIcons/threeDots.svg',
+    },
+    {
+      fname: 'Tony',
+      lname: 'Starc',
+      location1: 'Belmont',
+      location2: 'North Carolina',
+      contact: '+1 012 345 6789',
+      Ftime: '10:30 AM',
+      Fdate: 'May 3, 2023',
+      Ttime: '11:30 AM',
+      Tdate: 'May 3, 2023',
+      type: 'Truck Parking',
+      amount: '$5',
+      status: 'Paid',
+      threedots: '/media/icons/cardIcons/threeDots.svg',
+    },
+    {
+      fname: 'Tony',
+      lname: 'Starc',
+      location1: 'Belmont',
+      location2: 'North Carolina',
+      contact: '+1 012 345 6789',
+      Ftime: '10:30 AM',
+      Fdate: 'May 3, 2023',
+      Ttime: '11:30 AM',
+      Tdate: 'May 3, 2023',
+      type: 'Truck Parking',
+      amount: '$5',
+      status: 'Paid',
+      threedots: '/media/icons/cardIcons/threeDots.svg',
+    },
+  ];
   return (
     <>
       <div>
         {/* My bookings Section */}
-        <div className="bookings ">
+        <div className="bookings !w-100">
           <div className="row">
             <div className="col-xl-3 col-lg-6 col-12 !h-[96px] xl:p-0 lg:!pb-0 rounded !rouned-lg">
               <PaymentHistoryCard
@@ -58,6 +209,7 @@ export default function PaymentHistory() {
             </div>
           </div>
           <div className="bookings-head flex flex-xl-row flex-column pt-10 pb-4 md:justify-between justify-start">
+
             <div className="title font-extrabold text-2xl flex xl:justify-start justify-center">
               Payment History
             </div>
@@ -99,6 +251,7 @@ export default function PaymentHistory() {
                 Add Payment Method
               </button>
             </div>
+
           </div>
           <div className="bookings !overflow-x-auto">
             <div className="table tableBooking rounded-xl overflow-hidden">
@@ -134,7 +287,7 @@ export default function PaymentHistory() {
                     </tr>
                   </thead>
                   <tbody>
-                    {BookingTable.map((data, index) => {
+                    {PaymentTable.map((data, index) => {
                       return (
                         <tr key={index}>
                           <td className="">
@@ -235,6 +388,7 @@ export default function PaymentHistory() {
               </div>
             </div>
           </div>
+             {/* <BookingTable/> */}
         </div>
         {/* My Earnings and Calender */}
         <div
