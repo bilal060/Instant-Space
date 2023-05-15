@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+
 body {
   margin: 0;
   font-family: "SF Pro Display", sans-serif;
@@ -18,20 +19,25 @@ code {
 .text-45 {
   font-size: 45px !important;
 }
+
 /* font color */
-.text-gray{
+.text-gray {
   color: #7D8695 !important;
 }
-.text-primary{
+
+.text-primary {
   color: #0064FA !important
 }
-.text-black{
+
+.text-black {
   color: #171D25 !important;
 }
-.text-green{
+
+.text-green {
   color: #169401;
 }
-.text-red{
+
+.text-red {
   color: #FF3030;
 }
 
@@ -44,6 +50,7 @@ input[placeholder="Email"] {
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+
 button[id="dropDown"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/dropdown.svg");
@@ -61,6 +68,7 @@ input[placeholder="Company Name"] {
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+
 input[placeholder="Full Name"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/fullName.svg");
@@ -79,9 +87,11 @@ input[placeholder="Date of Birth"] {
   font-size: 18px;
 }
 
-input[placeholder="Date of Birth"] 
-::-webkit-inner-spin-button { display: block; }
-::-webkit-calendar-picker-indicator { 
+input[placeholder="Date of Birth"]::-webkit-inner-spin-button {
+  display: block;
+}
+
+::-webkit-calendar-picker-indicator {
   background: transparent;
   position: absolute;
   left: 0.7rem;
@@ -95,6 +105,7 @@ div[id="phone"] {
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+
 input[placeholder="Company License Number"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/licenseNumber.svg");
@@ -103,6 +114,7 @@ input[placeholder="Company License Number"] {
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+
 input[placeholder="Complete Address"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/location.svg");
@@ -111,6 +123,7 @@ input[placeholder="Complete Address"] {
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+
 input[placeholder="Enter Email OTP"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/otp.svg");
@@ -119,6 +132,7 @@ input[placeholder="Enter Email OTP"] {
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+
 input[id="dropdown"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/dropdown.svg");
@@ -128,15 +142,16 @@ input[id="dropdown"] {
   font-size: 18px;
 }
 
-input[placeholder="Password"] {
+input[type="password"] {
   background-color: white;
-  
+
   background-image: url("../../../../../public/images/icons/lock.svg");
   background-position: 10px 13px;
   background-repeat: no-repeat;
   padding: 12px 0px 12px 40px;
   font-size: 18px;
 }
+
 @media screen and (min-width:992px) {
   .eye {
     background-image: url("../../../../../public/images/icons/eye.svg");
@@ -148,6 +163,7 @@ input[placeholder="Password"] {
     right: 160px;
   }
 }
+
 @media screen and (max-width:992px) {
   .eye {
     background-image: url("../../../../../public/images/icons/eye.svg");
@@ -160,32 +176,32 @@ input[placeholder="Password"] {
   }
 }
 
-@media screen and (min-width:992px){
-  .eye1{
+@media screen and (min-width:992px) {
+  .eye1 {
     background-image: url("../../../../../public/images/icons/eye.svg");
-  background-position: 10px 37px;
-  background-repeat: no-repeat;
-  padding: 26px 16px 35px;
-  font-size: 18px;
-  top: -23px;
-  right: 160px;
+    background-position: 10px 37px;
+    background-repeat: no-repeat;
+    padding: 26px 16px 35px;
+    font-size: 18px;
+    top: -23px;
+    right: 160px;
   }
 }
 
-@media screen and (max-width:992px){
-  .eye1{
+@media screen and (max-width:992px) {
+  .eye1 {
     background-image: url("../../../../../public/images/icons/eye.svg");
-  background-position: 10px 37px;
-  background-repeat: no-repeat;
-  padding: 26px 16px 35px;
-  font-size: 18px;
-  top: -25px;
-  right: 160px;
+    background-position: 10px 37px;
+    background-repeat: no-repeat;
+    padding: 26px 16px 35px;
+    font-size: 18px;
+    top: -25px;
+    right: 160px;
   }
 }
 
-@media screen and (min-width:992px){
-  .eye2{
+@media screen and (min-width:992px) {
+  .eye2 {
     background-image: url("../../../../../public/images/icons/eye.svg");
     background-position: 10px 37px;
     background-repeat: no-repeat;
@@ -196,8 +212,8 @@ input[placeholder="Password"] {
   }
 }
 
-@media screen and (max-width:992px){
-  .eye2{
+@media screen and (max-width:992px) {
+  .eye2 {
     background-image: url("../../../../../public/images/icons/eye.svg");
     background-position: 10px 37px;
     background-repeat: no-repeat;
@@ -208,54 +224,54 @@ input[placeholder="Password"] {
   }
 }
 
-@media screen and (min-width:992px){
-  .eye3{
+@media screen and (min-width:992px) {
+  .eye3 {
     background-image: url("../../../../../public/images/icons/eye.svg");
-  background-position: 10px 37px;
-  background-repeat: no-repeat;
-  padding: 26px 16px 35px;
-  font-size: 18px;
-  top: 151px;
-  right: 160px;
+    background-position: 10px 37px;
+    background-repeat: no-repeat;
+    padding: 26px 16px 35px;
+    font-size: 18px;
+    top: 151px;
+    right: 160px;
   }
 }
 
-@media screen and (max-width:992px){
-  .eye3{
+@media screen and (max-width:992px) {
+  .eye3 {
     background-image: url("../../../../../public/images/icons/eye.svg");
-  background-position: 10px 37px;
-  background-repeat: no-repeat;
-  padding: 26px 16px 35px;
-  font-size: 18px;
-  top: 138px;
-  right: 160px;
+    background-position: 10px 37px;
+    background-repeat: no-repeat;
+    padding: 26px 16px 35px;
+    font-size: 18px;
+    top: 138px;
+    right: 160px;
   }
 }
+
 .linearGradient {
-  background-image: linear-gradient(
-      180deg,
+  background-image: linear-gradient(180deg,
       rgba(23, 29, 37, 0) 0%,
-      #171d25 83.85%
-    ),
-    url("../../../../../public/media/misc/Rectangle.png") !important; 
-    height: 100%;
+      #171d25 83.85%),
+    url("../../../../../public/media/misc/Rectangle.png") !important;
+  height: 100%;
   background-size: cover;
   color: white;
   padding: 20px;
 }
 
-hr{
+hr {
   display: inline-block;
   width: 44%;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-span{
+span {
   /* width: 100px !important; */
   display: inline-block;
   text-align: center;
 }
+
 .head-border {
   display: flex;
   align-items: center;
@@ -276,15 +292,16 @@ span{
 .head-border:after {
   margin-left: 0.15rem;
 }
+
 @media screen and (max-width:992px) {
-  .rounded32{
-      border-radius: 10px !important;
+  .rounded32 {
+    border-radius: 10px !important;
   }
 
 }
 
-.stroke-border{
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='rgba(195, 214, 218, 1)' stroke-width='2' stroke-dasharray='5%2c 15' stroke-dashoffset='41' stroke-linecap='round'/%3e%3c/svg%3e"); 
+.stroke-border {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='rgba(195, 214, 218, 1)' stroke-width='2' stroke-dasharray='5%2c 15' stroke-dashoffset='41' stroke-linecap='round'/%3e%3c/svg%3e");
   border-radius: 10px;
 }
 
@@ -341,3 +358,62 @@ span{
 
 
 
+.managers .managerno {
+  padding: 16px;
+}
+
+.managers .managerno:nth-child(odd) {
+  background-color: #F4F4F4;
+  ;
+}
+
+.reviews:last-child {
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.collapse {
+  visibility: visible !important;
+}
+
+.accordion-item {
+  border-radius: 0 !important;
+  border: 0 !important;
+}
+
+.accordion-item .accordion-button {
+  border-radius: 0 !important;
+  border: 1px solid #E7E6E9 !important;
+  border-width: 0 0 1px 0 !important;
+  box-shadow: none !important;
+}
+
+
+.accordion-item .accordion-body {
+  border-bottom: 1px solid #E7E6E9 !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-icon) !important;
+}
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F8F8;
+  border-radius: 0 !important;
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DBDBDB;
+  border-radius: 6px !important;
+  border: 3px solid #F8F8F8;
+}
+.account-setting .link.active img path{
+  fill:#0064FA;
+ }

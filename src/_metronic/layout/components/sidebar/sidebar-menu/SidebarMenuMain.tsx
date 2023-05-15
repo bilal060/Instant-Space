@@ -41,7 +41,7 @@ const SidebarMenuMain = () => {
         fontIcon="bi-app-indicator"
       />
       <SidebarMenuItem
-        to="/Messages"
+        to="/chat"
         icon="/media/icons/InstantIcons/Messages.svg"
         title={intl.formatMessage({ id: 'MENU.Messages' })}
         fontIcon="bi-app-indicator"
