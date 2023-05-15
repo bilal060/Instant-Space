@@ -148,7 +148,36 @@
   "Notifications.Description3": "LKW-Parkplatz",
   "Notifications.Description4": "10:30 Uhr | 3. Mai 2023",
   "Notifications.Paid": "Bezahlt",
-  "Notifications.Cancelled": "Abgesagt"
+  "Notifications.Cancelled": "Abgesagt",
+
+
+  "SpaceCardDetail.Title": "ACE-Parklounge",
+  "SpaceCardDetail.Phone": "+1 012 3456 789",
+  "SpaceCardDetail.Capacity": "drei­hundert",
+  "SpaceCardDetail.Address": "Belmont, North Carolina",
+  "SpaceCardDetail.Type": "Parkplatz",
+  "SpaceCardDetail.Rate": "5 $",
+  "SpaceCardDetail.Status": "Verfügbar",
+  "SpaceCardDetail.CapacityHead": "Kapazität",
+  "SpaceCardDetail.TypeHead": "Typ",
+  "SpaceCardDetail.RateHead": "Rate",
+  "SpaceCardDetail.AddNewCard": "Neuen Raum hinzufügen",
+  "SpaceCardDetail.UploadPicture": "Bild hochladen",
+  "SpaceCardDetail.Facilities": "Alle Einrichtungen",
+
+  "Managers.Title": "Manager",
+  "Managers.NameHead": "Vollständiger Name",
+  "Managers.ContactHead": "Kontaktinformation",
+  "Managers.TimeHead": "Schichtzeitfenster",
+  "Managers.Name": "Tony Stark",
+  "Managers.Contact": "+1 012 345 6789",
+  "Managers.Time": "09:00 bis 17:00 Uhr",
+
+  "Reviews.Title":"Rezensionen",
+  "Reviews.Name":"Tony Stark",
+  "Reviews.Rating":"4,0",
+  "Reviews.Comment":"Lorem ipsum dolor sit amet consectetur. Et in cursus egestas ipsum scelerisque cursus a vestibulum. Fringilla non sempre purus vestibulum tortor faucibus. Pretium varius elit quis et. Eleifend scelerisque orci purus sit. Suspendisse Elit Pulvinar Sem Malesuada Fermentum My Molestie. Pharetra fringilla nunc suspendisse massa etiam integer tempor blandit. Faucibus sit habitant est netus risus ullamcorper pellentesque. Quam et magna imperdiet mauris congue orci non phasellus. Vestibulum amet pharetra eget viverra."
+
 
 
 

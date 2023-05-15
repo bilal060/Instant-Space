@@ -79,5 +79,36 @@
     "Notifications.Description3": "وقوف الشاحنات",
     "Notifications.Description4": "10:30 ص | 3 مايو 2023",
     "Notifications.Paid": "مدفوع",
-    "Notifications.Cancelled": "ألغيت"
+    "Notifications.Cancelled": "ألغيت",
+
+    
+  "SpaceCardDetail.Title": "صالة وقوف السيارات ايس",
+  "SpaceCardDetail.Phone": "+1 012 3456789",
+  "SpaceCardDetail.Capacity": "ثلاثة مائة",
+  "SpaceCardDetail.Address": "بلمونت ، نورث كارولينا",
+  "SpaceCardDetail.Type": "موقف سيارة",
+  "SpaceCardDetail.Rate": "5 دولارات",
+  "SpaceCardDetail.Status": "متاح",
+  "SpaceCardDetail.CapacityHead": "سعة",
+  "SpaceCardDetail.TypeHead": "يكتب",
+  "SpaceCardDetail.RateHead": "معدل",
+  "SpaceCardDetail.AddNewCard": "أضف مساحة جديدة",
+  "SpaceCardDetail.UploadPicture": "تحميل الصورة",
+  "SpaceCardDetail.Facilities": "جميع المرافق",
+
+  "Managers.Title": "المديرين",
+  "Managers.NameHead": "الاسم الكامل",
+  "Managers.ContactHead": "معلومات الاتصال",
+  "Managers.TimeHead": "التحول الزمني",
+  "Managers.Name": "توني ستارك",
+  "Managers.Contact": "+1 012 3456789",
+  "Managers.Time": "09:00 ص حتي 05:00 م",
+
+  "Reviews.Title":"المراجعات",
+  "Reviews.Name":"توني ستارك",
+  "Reviews.Rating":"4.0",
+  "Reviews.Comment":"Lorem ipsum dolor sit amet consectetur. في cursus egestas ipsum scelerisque cursus a vestibulum. Fringilla non semper purus vestibulum tortor faucibus. Pretium varius elit quis et. Eleifend scelerisque orci purus الجلوس. Suspendisse elit pulvinar sem malesuada fermentum mi molestie. Pharetra fringilla nunc Suspendisse Massa etiam عدد صحيح مؤقت لطيف. Faucibus الجلوس موطن هو netus risus ullamcorper pellentesque. Quam et magna imperdiet mauris يتحدان أورسي غير فاسيلوس. الدهليز أميت فاريترا إيجيت فيفيرا."
+
+
+
 }

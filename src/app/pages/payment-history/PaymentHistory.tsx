@@ -4,6 +4,7 @@ import ManagerForm from '../../modules/auth/components/modalForms/ManagerForm';
 import clsx from 'clsx';
 import { PaymentHistoryCard } from '../../../components/instantComponents/PaymentHistoryCard';
 import PaymentForm from '../../modules/auth/components/modalForms/PaymentForm';
+import BookingTable from '../../../components/instantComponents/tableComponents';
 export default function PaymentHistory() {
   const PaymentTable = [
     {
