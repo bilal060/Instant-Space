@@ -13,37 +13,43 @@ const SidebarMenuMain = () => {
       <SidebarMenuItem
         to="/Home"
         icon="/media/icons/InstantIcons/Home.svg"
-        title="Home"
+        title={intl.formatMessage({ id: 'MENU.Home' })}
         fontIcon="bi-app-indicator"
       />
       <SidebarMenuItem
         to="/my-spaces"
         icon="/media/icons/InstantIcons/Spaces.svg"
-        title="My Spaces"
+        title={intl.formatMessage({ id: 'MENU.MySpaces' })}
         fontIcon="bi-app-indicator"
       />
       <SidebarMenuItem
         to="/booking-management"
         icon="/media/icons/InstantIcons/Booking.svg"
-        title="Booking Management"
+        title={intl.formatMessage({ id: 'MENU.BookingManagement' })}
         fontIcon="bi-app-indicator"
       />
       <SidebarMenuItem
         to="/my-managers"
         icon="/media/icons/InstantIcons/Managers.svg"
-        title="My Managers"
+        title={intl.formatMessage({ id: 'MENU.MyManagers' })}
         fontIcon="bi-app-indicator"
       />
       <SidebarMenuItem
         to="/Payment History"
         icon="/media/icons/InstantIcons/Payment.svg"
-        title="Payment History"
+        title={intl.formatMessage({ id: 'MENU.PaymentHistory' })}
         fontIcon="bi-app-indicator"
       />
       <SidebarMenuItem
         to="/Messages"
         icon="/media/icons/InstantIcons/Messages.svg"
-        title="Messages"
+        title={intl.formatMessage({ id: 'MENU.Messages' })}
+        fontIcon="bi-app-indicator"
+      />
+      <SidebarMenuItem
+        to="/notifications"
+        icon="/media/icons/InstantIcons/Messages.svg"
+        title={intl.formatMessage({ id: 'MENU.Notifications' })}
         fontIcon="bi-app-indicator"
       />
       <SidebarMenuItem
@@ -56,7 +62,7 @@ const SidebarMenuMain = () => {
       <SidebarMenuItem
         to="/builder"
         icon="/media/icons/duotune/general/gen019.svg"
-        title="Layout Builder"
+        title={intl.formatMessage({ id: 'MENU.LayoutBuilder' })}
         fontIcon="bi-layers"
       />
       {/* <div className='menu-item'>

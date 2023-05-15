@@ -34,6 +34,12 @@
   height: 6rem !important;
   width: 4.4rem !important;
 }
+@media screen and (max-width: 540px){
+  .fc-daygrid-day {
+    height: 6rem !important;
+    width: 4.1rem !important;
+  }
+  }
 tr .fc-day-other:hover div div a:not(:hover) {
     background-color:  #f4f4f4 !important;
     color: #7d8695 !important;

@@ -1,3 +1,4 @@
+import React from 'react';
 import clsx from 'clsx';
 import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 import {
@@ -7,6 +8,8 @@ import {
   ThemeModeSwitcher,
 } from '../../../partials';
 import { useLayout } from '../../core';
+import { setLanguage } from '../../../i18n/Metronici18n';
+import { useIntl } from 'react-intl';
 
 const itemClass = 'ms-1 ms-lg-3';
 const btnClass =
@@ -15,6 +18,7 @@ const userAvatarClass = 'symbol-35px symbol-md-40px';
 const btnIconClass = 'svg-icon-1';
 
 const Navbar = () => {
+  const intl = useIntl();
   const { config } = useLayout();
   return (
     <div className="app-navbar flex-shrink-0">
@@ -27,6 +31,26 @@ const Navbar = () => {
           <KTSVG path='/media/icons/duotune/general/gen032.svg' className={btnIconClass} />
         </div>
       </div> */}
+      <div className="button flex py-5 gap-4 mr-8">
+        <button
+          className="px-5 py-2 bg-[#0064FA] text-white rounded-xl flex items-center"
+          onClick={() => setLanguage('en')}
+        >
+          English
+        </button>
+        <button
+          className="px-5 py-2 bg-[#0064FA] text-white rounded-xl flex items-center"
+          onClick={() => setLanguage('ar')}
+        >
+          Arabic
+        </button>
+        <button
+          className="px-5 py-2 bg-[#0064FA] text-white rounded-xl flex items-center"
+          onClick={() => setLanguage('de')}
+        >
+          German
+        </button>
+      </div>
 
       <div className={clsx('app-navbar-item', itemClass)}>
         <div
@@ -55,10 +79,14 @@ const Navbar = () => {
       </div> */}
 
       <div className={clsx('app-navbar-item', itemClass)}>
-      <div className='flex flex-col items-end mr-4'>
-            <div className='text-black text-lg font-bold'>Martin Randolph</div>
-            <div className='text-gray flex justify-end text-sm mt-[-5px]'>Business Owner</div>
+        <div className="flex flex-col items-end mr-4">
+          <div className="text-black text-lg font-bold">
+            {intl.formatMessage({ id: 'Header.Name' })}
           </div>
+          <div className="text-gray flex justify-end text-sm mt-[-5px]">
+            {intl.formatMessage({ id: 'Header.Designation' })}
+          </div>
+        </div>
         <div
           className={clsx('cursor-pointer symbol', userAvatarClass)}
           data-kt-menu-trigger="{default: 'click'}"
@@ -69,7 +97,6 @@ const Navbar = () => {
         </div>
         <HeaderUserMenu />
       </div>
-
       {config.app?.header?.default?.menu?.display && (
         <div
           className="app-navbar-item d-lg-none ms-2 me-n3"

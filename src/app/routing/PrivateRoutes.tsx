@@ -9,6 +9,7 @@ import {WithChildren} from '../../_metronic/helpers'
 import BuilderPageWrapper from '../pages/layout-builder/BuilderPageWrapper'
 import HomePage from '../pages/home/HomePage'
 import MySpaces from '../pages/mySpaces/MySpaces'
+import Notifications from '../pages/notifications/Notifications'
 
 const PrivateRoutes = () => {
   const ProfilePage = lazy(() => import('../modules/profile/ProfilePage'))
@@ -22,12 +23,13 @@ const PrivateRoutes = () => {
     <Routes>
       <Route element={<MasterLayout />}>
         {/* Redirect to Dashboard after success login/registartion */}
-        <Route path='auth/*' element={<Navigate to='/dashboard' />} />
+        <Route path='auth/*' element={<Navigate to='/Home' />} />
         {/* Pages */}
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='Home' element={<HomePage />} />
         <Route path='my-spaces' element={<MySpaces />} />
 
+        <Route path='notifications' element={<Notifications />} />
 
         <Route path='builder' element={<BuilderPageWrapper />} />
         <Route path='menu-test' element={<MenuTestPage />} />

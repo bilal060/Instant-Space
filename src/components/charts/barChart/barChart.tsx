@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ApexCharts, { ApexOptions } from 'apexcharts';
 import { getCSS, getCSSVariableValue } from '../../../_metronic/assets/ts/_utils'
 import { useThemeMode } from '../../../_metronic/partials/layout/theme-mode/ThemeModeProvider'; 
@@ -40,7 +40,7 @@ const BarChart1: React.FC<Props> = ({ className }) => {
   return (
     <div className={`card ${className}`}>
       <div className="flex justify-between py-4 px-6">
-          <div className="card-label rounded-lg bg-[#F4F4F4] my-2 px-2 flex justify-center"> <label className='text-[#7D8695] font-normal '> 2002-2003 </label> <img src='/media/icons/InstantIcons/cancel.svg' className='ml-1 mt-[2px]'/></div>
+          <div className="card-label rounded-lg bg-[#F4F4F4] my-2 px-2 flex justify-center"> <label className='text-[#7D8695] font-normal '> 2002-2003 </label> <img src='/media/icons/InstantIcons/cancel.svg' alt='' className='ml-1 mt-[2px]'/></div>
         <div className="button">
             <button className="px-5 py-2 bg-[#0064FA] text-white rounded-xl flex items-center">
               <img
@@ -71,7 +71,7 @@ export { BarChart1 };
 
 function getChartOptions(height: number): ApexOptions {
   const labelColor = '#171D25';
-  const borderColor = getCSSVariableValue('--kt-gray-200');
+  // const borderColor = getCSSVariableValue('--kt-gray-200');
   const baseColor = 'rgba(0, 100, 250, 0.4)';
   const secondaryColor = getCSSVariableValue('--kt-gray-300');
 

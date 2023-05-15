@@ -1,4 +1,6 @@
 import React from "react";
+import { useIntl } from 'react-intl';
+
 type Props = {
   className: string;
   title: string;
@@ -11,7 +13,7 @@ type Props = {
   address: string;
   type: string;
   rate:string;
-
+ 
 };
 
 const SpaceCard = ({
@@ -26,7 +28,11 @@ const SpaceCard = ({
   available,
   type,
   rate,
-}: Props) => (
+  
+}: Props)  =>{
+  const intl = useIntl();
+
+return(
   <div className="flex flex-col rounded-lg card-shadow">
   <div className="img relative">
     <img alt="" src={img} className="w-full" />
@@ -58,7 +64,8 @@ const SpaceCard = ({
           src="/media/icons/cardIcons/flag.svg"
           className="h-3.5 w-3.5"
         />
-        <label className="text-sm pl-1">Capacity: {capacity}</label>
+        <label className="text-sm pl-1">{intl.formatMessage({ id: "SpaceCard.CapacityHead" })}:
+ {capacity}</label>
       </div>
     </div>
     <div className="row mx-4 pt-4">
@@ -78,7 +85,7 @@ const SpaceCard = ({
           src="/media/icons/cardIcons/space.svg"
           className="h-3.5 w-3.5"
         />
-        <label className="text-sm pl-1">Type: {type}</label>
+        <label className="text-sm pl-1">{intl.formatMessage({ id: "SpaceCard.TypeHead" })}: {type}</label>
       </div>
       <div className="px-0 col-4 flex items-center">
         <img
@@ -86,7 +93,7 @@ const SpaceCard = ({
           src="/media/icons/cardIcons/dollar.svg"
           className="h-3.5 w-3.5"
         />
-        <label className="text-sm pl-1">Rate: {rate}</label>
+        <label className="text-sm pl-1">{intl.formatMessage({ id: "SpaceCard.RateHead" })}: {rate}</label>
       </div>
     </div>
     <div className="border-b-2"></div>
@@ -147,6 +154,6 @@ const SpaceCard = ({
     </div>
   </div>
 </div>
-);
+)} 
 export { SpaceCard };
 
