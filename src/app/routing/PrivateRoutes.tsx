@@ -1,17 +1,19 @@
-import {lazy, FC, Suspense} from 'react'
-import {Route, Routes, Navigate} from 'react-router-dom'
-import {MasterLayout} from '../../_metronic/layout/MasterLayout'
+import { lazy, FC, Suspense } from 'react'
+import { Route, Routes, Navigate } from 'react-router-dom'
+import { MasterLayout } from '../../_metronic/layout/MasterLayout'
 import TopBarProgress from 'react-topbar-progress-indicator'
-import {DashboardWrapper} from '../pages/dashboard/DashboardWrapper'
-import {MenuTestPage} from '../pages/MenuTestPage'
-import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
-import {WithChildren} from '../../_metronic/helpers'
+import { DashboardWrapper } from '../pages/dashboard/DashboardWrapper'
+import { MenuTestPage } from '../pages/MenuTestPage'
+import { getCSSVariableValue } from '../../_metronic/assets/ts/_utils'
+import { WithChildren } from '../../_metronic/helpers'
 import BuilderPageWrapper from '../pages/layout-builder/BuilderPageWrapper'
 import MyManagers from '../pages/myManagers/MyManagers'
 import HomePage from '../pages/home/HomePage'
 import MySpaces from '../pages/mySpaces/MySpaces'
 import PaymentHistory from '../pages/payment-history/PaymentHistory'
 import BookingManagement from '../pages/booking-management/BookingManagement'
+import MySpaceNext from '../pages/my-SpacesNext'
+import Notifications from '../pages/notifications/Notifications'
 
 const PrivateRoutes = () => {
   const ProfilePage = lazy(() => import('../modules/profile/ProfilePage'))
@@ -25,7 +27,7 @@ const PrivateRoutes = () => {
     <Routes>
       <Route element={<MasterLayout />}>
         {/* Redirect to Dashboard after success login/registartion */}
-        <Route path='auth/*' element={<Navigate to='/dashboard' />} />
+        <Route path='auth/*' element={<Navigate to='/Home' />} />
         {/* Pages */}
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='Home' element={<HomePage />} />
@@ -34,7 +36,9 @@ const PrivateRoutes = () => {
         <Route path='/payment-history' element={<PaymentHistory />} />
         <Route path='/booking-management' element={<BookingManagement />} />
         <Route path='my-spaces' element={<MySpaces />} />
+        <Route path='my-spaces/*' element={<MySpaceNext />} />
 
+        <Route path='notifications' element={<Notifications />} />
 
         <Route path='builder' element={<BuilderPageWrapper />} />
         <Route path='menu-test' element={<MenuTestPage />} />
@@ -94,7 +98,7 @@ const PrivateRoutes = () => {
   )
 }
 
-const SuspensedView: FC<WithChildren> = ({children}) => {
+const SuspensedView: FC<WithChildren> = ({ children }) => {
   const baseColor = getCSSVariableValue('--kt-primary')
   TopBarProgress.config({
     barColors: {
@@ -106,4 +110,4 @@ const SuspensedView: FC<WithChildren> = ({children}) => {
   return <Suspense fallback={<TopBarProgress />}>{children}</Suspense>
 }
 
-export {PrivateRoutes}
+export { PrivateRoutes }

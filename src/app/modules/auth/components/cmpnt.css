@@ -149,6 +149,7 @@ input[placeholder="Enter Email OTP"] {
   padding: 12px 20px 12px 40px;
   font-size: 18px;
 }
+
 input[id="dropdown"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/dropdown.svg");
@@ -158,7 +159,7 @@ input[id="dropdown"] {
   font-size: 18px;
 }
 
-input[placeholder="Password"] {
+input[type="password"] {
   background-color: white;
 
   background-image: url("../../../../../public/images/icons/lock.svg");
@@ -265,12 +266,10 @@ input[placeholder="Password"] {
 }
 
 .linearGradient {
-  /* background-image: linear-gradient(
-      180deg,
+  background-image: linear-gradient(180deg,
       rgba(23, 29, 37, 0) 0%,
-      #171d25 83.85%
-    ),
-    url("../../../../../public/media/misc/Rectangle.png") !important;  */
+      #171d25 83.85%),
+    url("../../../../../public/media/misc/Rectangle.png") !important;
   height: 100%;
   background-size: cover;
   color: white;
@@ -688,3 +687,62 @@ p[id="TemporaryStorage"] {
   padding-right: 10px;
   height: 38px !important;
 }
+.managers .managerno {
+  padding: 16px;
+}
+
+.managers .managerno:nth-child(odd) {
+  background-color: #F4F4F4;
+  ;
+}
+
+.reviews:last-child {
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.collapse {
+  visibility: visible !important;
+}
+
+.accordion-item {
+  border-radius: 0 !important;
+  border: 0 !important;
+}
+
+.accordion-item .accordion-button {
+  border-radius: 0 !important;
+  border: 1px solid #E7E6E9 !important;
+  border-width: 0 0 1px 0 !important;
+  box-shadow: none !important;
+}
+
+
+.accordion-item .accordion-body {
+  border-bottom: 1px solid #E7E6E9 !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-icon) !important;
+}
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F8F8;
+  border-radius: 0 !important;
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DBDBDB;
+  border-radius: 6px !important;
+  border: 3px solid #F8F8F8;
+}
+.account-setting .link.active img path{
+  fill:#0064FA;
+ }

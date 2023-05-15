@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import {FC} from 'react'
 import {toAbsoluteUrl} from '../../../helpers'
 import {useLang, setLanguage} from '../../../i18n/Metronici18n'
+import React from 'react'
 
 const languages = [
   {
@@ -35,6 +36,11 @@ const languages = [
     name: 'French',
     flag: toAbsoluteUrl('/media/flags/france.svg'),
   },
+  {
+    lang: 'ar',
+    name: 'Arabic',
+    flag: toAbsoluteUrl('/media/flags/france.svg'),
+  },
 ]
 
 const Languages: FC = () => {
@@ -51,7 +57,8 @@ const Languages: FC = () => {
         <span className='menu-title position-relative'>
           Language
           <span className='fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0'>
-            {currentLanguage?.name}{' '}
+            
+            {currentLanguage?.name}
             <img
               className='w-15px h-15px rounded-1 ms-2'
               src={currentLanguage?.flag}

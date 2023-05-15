@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {useState} from 'react'
+import { useState } from 'react'
 import React from 'react'
 import * as Yup from 'yup'
 import clsx from 'clsx'
-import {Link} from 'react-router-dom'
-import {useFormik} from 'formik'
-import {getUserByToken, login} from '../core/_requests'
-import {toAbsoluteUrl} from '../../../../_metronic/helpers'
-import {useAuth} from '../core/Auth'
+import { Link } from 'react-router-dom'
+import { useFormik } from 'formik'
+import { getUserByToken, login } from '../core/_requests'
+import { toAbsoluteUrl } from '../../../../_metronic/helpers'
+import { useAuth } from '../core/Auth'
 import Logo from './cmpnt/logo'
 import AuthHead from './cmpnt/authHead'
 import AuthDesc from './cmpnt/authDesc'
@@ -40,7 +40,7 @@ const initialValues = {
 
 export function Login() {
   const [loading, setLoading] = useState(false)
-  const {saveAuth, setCurrentUser} = useAuth()
+  const { saveAuth, setCurrentUser } = useAuth()
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -148,48 +148,70 @@ return (
             <div className='fv-help-block'>
               <span role='alert'>{formik.errors.password}</span>
             </div>
-          </div>
-        )}
-      </div>
-              <div className="eye absolute"></div>
 
-              <Link to='forgot-password'>
-                  <div className="font-bold text-[#0064FA] text-sm flex justify-end pb-8">
-                      Forgot Password?
-                  </div>
-              </Link>
-
-              <button type="submit" className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-14">
-                Login
-              </button>
-
-              <div className="head-border text-sm !text-[#7D8695] my-8">OR</div>
-
-              <button className="!text-[#171D25] !bg-[#F1F6F7] form-control !rounded-md !font-bold !text-sm h-14 ">
-                <div className="flex justify-center">
-                  <div>
-                  <img
-                      alt='Logo'
-                      src={toAbsoluteUrl('/media/svg/brand-logos/google-icon.svg')}
-                      className='h-15px me-3'
-                  />
-                  </div>
-                  <div className=" flex items-center">
-                    <label> Login with Google</label>
+            <div className='mb-3'>
+              <input
+                type='password'
+                placeholder='Password'
+                autoComplete='off'
+                {...formik.getFieldProps('password')}
+                className={clsx(
+                  'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
+                  {
+                    'is-invalid': formik.touched.password && formik.errors.password,
+                  },
+                  {
+                    'is-valid': formik.touched.password && !formik.errors.password,
+                  }
+                )}
+              />
+              {formik.touched.password && formik.errors.password && (
+                <div className='fv-plugins-message-container'>
+                  <div className='fv-help-block'>
+                    <span role='alert'>{formik.errors.password}</span>
                   </div>
                 </div>
-              </button>
-
+              )}
             </div>
-            <div className="pt-8 flex justify-center sm:pr-[140px]">
-              <Link to='register'>
-                   <ButtonDesc to='register' text1="Don’t have an account?" text2="Register"/>
-              </Link>
+            <div className="eye absolute"></div>
+
+            <Link to='forgot-password'>
+              <div className="font-bold text-[#0064FA] text-sm flex justify-end pb-8">
+                Forgot Password?
               </div>
+            </Link>
+
+            <button className="!text-[#ffff] !bg-[#0064FA] form-control !rounded-md !font-bold !text-sm h-14">
+              Login
+            </button>
+
+            <div className="head-border text-sm !text-[#7D8695] my-8">OR</div>
+
+            <button className="!text-[#171D25] !bg-[#F1F6F7] form-control !rounded-md !font-bold !text-sm h-14 ">
+              <div className="flex justify-center">
+                <div>
+                  <img
+                    alt='Logo'
+                    src={toAbsoluteUrl('/media/svg/brand-logos/google-icon.svg')}
+                    className='h-15px me-3'
+                  />
+                </div>
+                <div className=" flex items-center">
+                  <label> Login with Google</label>
+                </div>
+              </div>
+            </button>
+
           </div>
+          <div className="pt-8 flex justify-center sm:pr-[140px]">
+            <Link to='register'>
+              <ButtonDesc to='register' text1="Don’t have an account?" text2="Register" />
+            </Link>
+          </div>
+        </div>
 
 
-       
+
       </div>
     </form>
   )

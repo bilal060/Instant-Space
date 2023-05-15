@@ -9,10 +9,12 @@ import Tabs from '../../app/modules/auth/components/cmpnt/Tabs';
 import ModalTabs from '../../app/modules/auth/components/cmpnt/Tabs';
 import Form1 from '../../app/modules/auth/components/modalForms/Form1';
 import ManagerForm from '../../app/modules/auth/components/modalForms/ManagerForm';
+import { Link } from 'react-router-dom'
+import { useIntl } from 'react-intl';
 
 
 export default function AddNewSpaceCard() {
-
+const intl = useIntl();
   const [show, setShow] = useState(false);
 
   const handleShow = () => setShow(true);
