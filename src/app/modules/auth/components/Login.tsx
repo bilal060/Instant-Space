@@ -144,11 +144,14 @@ return (
           value={password}
         />
         {formik.touched.password && formik.errors.password && (
+         
           <div className='fv-plugins-message-container'>
             <div className='fv-help-block'>
               <span role='alert'>{formik.errors.password}</span>
             </div>
-
+          </div>
+        )}
+        </div>
             <div className='mb-3'>
               <input
                 type='password'
@@ -203,11 +206,13 @@ return (
             </button>
 
           </div>
+
           <div className="pt-8 flex justify-center sm:pr-[140px]">
             <Link to='register'>
               <ButtonDesc to='register' text1="Don’t have an account?" text2="Register" />
             </Link>
           </div>
+
         </div>
 
 
