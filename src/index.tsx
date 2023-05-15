@@ -17,31 +17,65 @@ import './_metronic/assets/sass/style.react.scss'
 import {AppRoutes} from './app/routing/AppRoutes'
 import {AuthProvider, setupAxios} from './app/modules/auth'
 import React from 'react'
-/**
- * Creates `axios-mock-adapter` instance for provided `axios` instance, add
- * basic Metronic mocks and returns it.
- *
- * @see https://github.com/ctimmerm/axios-mock-adapter
- */
-/**
- * Inject Metronic interceptors for axios.
- *
- * @see https://github.com/axios/axios#interceptors
- */
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import UserReducer from './store/user/reducers/UserReducer';
+
+
+const { persistStore, persistReducer } = require('redux-persist');
+const queryClient = new QueryClient()
+const container = document.getElementById('root')
+
+
 setupAxios(axios)
 Chart.register(...registerables)
 
-const queryClient = new QueryClient()
-const container = document.getElementById('root')
+
+
+
+
+
+const rootReducer = combineReducers({
+  user: UserReducer
+});
+
+let devtools, store;
+const isClient = typeof window !== 'undefined';
+if (isClient) {
+  devtools =
+    window.__REDUX_DEVTOOLS_EXTENSION__
+      ? window.__REDUX_DEVTOOLS_EXTENSION__()
+      : (f) => f;
+
+  const storage = require('redux-persist/lib/storage').default;
+  const persistConfig = {
+    key: 'instant-space',
+    storage,
+  };
+
+  store = createStore(
+    persistReducer(persistConfig, rootReducer),
+    compose(applyMiddleware(thunk), devtools)
+  );
+
+  store.__PERSISTOR = persistStore(store);
+} else {
+  store = createStore(rootReducer, compose(applyMiddleware(thunk)));
+}
+
 if (container) {
   createRoot(container).render(
     <QueryClientProvider client={queryClient}>
       <MetronicI18nProvider>
         <AuthProvider>
-          <AppRoutes />
+          <Provider store={store}>
+            <AppRoutes />
+          </Provider>
         </AuthProvider>
       </MetronicI18nProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
+

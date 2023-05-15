@@ -142,11 +142,15 @@ export function CompanyInfo() {
         )}
       </div>
 
-      <div className="lg:mt-4 md:mt-4 sm:mt-4 bg-transparent">
-            <DropDown
-              title="Select Type"
-            />
-          </div>
+            <div className="lg:mt-4 md:mt-4 sm:mt-4 bg-transparent">
+              <div className='col-md-12 bg-transparent mb-4'>
+                <select className='auth-input height-56 border-2 border-solid !border-[#7D8695] bg-transparent' id="Role">
+                  <option defaultValue>Select Type</option>
+                  <option>Customer</option>
+                  <option>Business Owner</option>
+                </select>
+              </div>
+            </div>
              
         <div className='mb-3'>
                     <div id='phone' className='form-control p-0 bg-transparent border-0 mb-4'>

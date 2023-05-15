@@ -1,8 +1,9 @@
 import React from 'react';
 import { SpaceCard } from '../../../components/instantComponents/spaceCard';
 import AddNewSpaceCard from '../../../components/instantComponents/AddNewSpaceCard';
-import BookingTable from '../../../components/instantComponents/tableComponents';
-import '../../../index.css';
+import { BookingsTable } from '../../../components/instantComponents/tableComponents';
+import '../../../index.css'
+import Modal from '../auth/components/cmpnt/modal';
 import { BarChart1 } from '../../../components/charts/barChart/barChart';
 import EventCalender from '../../../components/Calender/EventCalender';
 import { useIntl } from 'react-intl';

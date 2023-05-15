@@ -60,6 +60,7 @@ button[id="dropDown"] {
   font-size: 18px;
 }
 
+
 input[placeholder="Company Name"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/companyName.svg");
@@ -73,6 +74,22 @@ input[placeholder="Full Name"] {
   background-color: white;
   background-image: url("../../../../../public/images/icons/fullName.svg");
   background-position: 10px 12px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[id="fullName"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/fullName.svg");
+  background-position: 10px 16px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="Email Address "] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/fullName.svg");
+  background-position: 10px 16px;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
   font-size: 18px;
@@ -256,7 +273,8 @@ input[type="password"] {
   height: 100%;
   background-size: cover;
   color: white;
-  padding: 20px;
+  padding: 30px;
+  /* border-radius: 20px !important; */
 }
 
 hr {
@@ -307,7 +325,7 @@ span {
 
 
 .custom-phone-dropdown-btn {
-  max-width: 75px;
+  max-width: 85px;
   border: 0;
   outline: 0;
   color: #A3A3A3;
@@ -321,14 +339,15 @@ span {
   border-width: 0 0 0 0px !important;
   border-radius: 0 !important;
   height: 24px !important;
+  font-size: 18px !important;
   margin-left: 20px !important;
 }
 
 .auth-input {
-  height: 46px;
+  height: 53px;
   /* background-color: #1D1D1D !important; */
   color: #A3A3A3;
-  border: 1px solid #6B6B6B;
+  /* border: 1px solid #6B6B6B; */
   border-radius: 5px;
   width: 100%;
   /* padding: 10px 20px; */
@@ -355,9 +374,319 @@ span {
   font-size: 18px;
   line-height: 100%;
 }
+.custom-drop-down {
+  height: 40px;
+  width: 55%;
+  margin-left: 16px;
+  /* background-color: #1D1D1D !important; */
+  color: #A3A3A3;
+  border: 1px solid #6B6B6B;
+  border-radius: 12px;
+  /* width: 100%; */
+  /* padding: 10px 20px; */
+  outline: 0;
+  font-size: 18px;
+  line-height: 100%;
+}
+@media screen and (min-width:1025px) {
+
+  .custom-drop-down1 {
+    height: 40px;
+    width: 55%;
+    margin-left: 16px;
+    /* background-color: #1D1D1D !important; */
+    color: #A3A3A3;
+    border: 1px solid #6B6B6B;
+    border-radius: 12px;
+    /* width: 100%; */
+    /* padding: 10px 20px; */
+    outline: 0;
+    font-size: 18px;
+    line-height: 100%;
+  }
+
+}
+@media screen and (max-width:1024px) {
+
+  .custom-drop-down1 {
+    height: 40px;
+    width: 85%;
+    /* margin-left: 16px; */
+    /* background-color: #1D1D1D !important; */
+    color: #A3A3A3;
+    border: 1px solid #6B6B6B;
+    border-radius: 12px;
+    /* width: 100%; */
+    /* padding: 10px 20px; */
+    outline: 0;
+    font-size: 18px;
+    line-height: 100%;
+  }
+
+}
+
+.default-nav {
+  opacity: 0;
+}
+
+input[placeholder="Enter Area Size in Sq. Yd"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/area.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+
+select[id="securityType"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/security.svg");
+  background-position: 10px 16px;
+  background-repeat: no-repeat;
+  padding: 12px 40px 12px 40px;
+  font-size: 18px;
+}
+
+input[placeholder="Enter Parking Capacity "] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/parking.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+
+input[placeholder="Rate / Hour "] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/rate.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="Expiry Date "] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/expiry.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+input[placeholder="CVV "] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/card.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+
+select[id="cctv"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/cctv.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+
+select[id="Fuel"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/fuel.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+
+select[id="Role"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/fullName.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
 
 
+input[placeholder="Enter Location "] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/location.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
 
+input[placeholder="Add Description "] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/description.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+}
+
+label[id="modal-label"] {
+  background-color: white;
+  background-image: url("../../../../../public/images/icons/fuel.svg");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  font-size: 18px;
+  color: rgba(125, 134, 149, 1);
+}
+
+.footer {
+  display: flex;
+  /* flex-shrink: 0; */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 0.5);
+  background-color: var(--bs-modal-footer-bg);
+  /* border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color); */
+  border-bottom-right-radius: var(--bs-modal-inner-border-radius);
+  border-bottom-left-radius: var(--bs-modal-inner-border-radius);
+}
+
+.custom-save-button {
+  background-color: #0064FA !important;
+  color: white !important;
+  width: 13.5rem;
+  height: 56px;
+  border-radius: 10px !important;
+}
+
+.custom-cancel-button {
+  background-color: rgba(0, 100, 250, 0.1) !important;
+  border: 1px solid #0064FA !important;
+  color: #0064FA !important;
+  width: 13.5rem;
+  height: 56px;
+  border-radius: 10px !important;
+}
+
+.custom-modal-title {
+  font-size: 24px;
+}
+
+.border-cross {
+  border: 2px solid black !important;
+  border-radius: 50px !important;
+}
+
+.uploader {
+  font-size: 18px;
+}
+
+.custom-tabs-head{
+  width: 80% !important;
+}
+
+.custom-tabs {
+  width: auto !important;
+}
+
+p[id="TruckParking"] {
+  background-color: transparent;
+  background-image: url("../../../../../public/images/icons/truck.svg");
+  background-position: 10px 1px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  /* color: rgba(125, 134, 149, 1); */
+
+}
+
+p[id="CarParking"] {
+  background-color: transparent;
+  background-image: url("../../../../../public/images/icons/car.svg");
+  background-position: 10px 1px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  /* color: rgba(125, 134, 149, 1); */
+
+}
+
+p[id="Warehouse"] {
+  background-color: transparent;
+  background-image: url("../../../../../public/images/icons/warehouse.svg");
+  background-position: 10px 1px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  /* color: rgba(125, 134, 149, 1); */
+
+}
+
+p[id="TemporaryStorage"] {
+  background-color: transparent;
+  background-image: url("../../../../../public/images/icons/storage.svg");
+  background-position: 10px 1px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  /* color: rgba(125, 134, 149, 1); */
+
+}
+
+.slideshow {
+  height: 100%;
+  width: 100%;
+}
+
+.slideshow div[dir="ltr"] {
+  height: 100%;
+}
+
+.slideshow div[dir="ltr"] div {
+  height: 99%;
+}
+
+.react-slideshow-container {
+  height: 100% !important;
+}
+
+.react-slideshow-wrapper slide {
+  height: 100% !important;
+}
+
+.images-wrap {
+  height: 100% !important;
+}
+
+.h-max-content{
+  height: max-content !important;
+}
+@media screen and (max-width:992px) {
+  .linearGradient {
+    margin: 0 !important;
+  }
+
+  .slideshow div[dir="ltr"] div {
+    height: 100% !important;
+  }
+
+  .section-1 {
+    position: absolute;
+    height: 100vh;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+  }
+
+  .section-2 {
+    height: 100vh;
+    overflow-y: auto;
+    padding: 0 !important;
+  }
+
+}
+.custom-button-width{
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 38px !important;
+}
 .managers .managerno {
   padding: 16px;
 }

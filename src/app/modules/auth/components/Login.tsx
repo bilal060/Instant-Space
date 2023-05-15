@@ -12,6 +12,11 @@ import Logo from './cmpnt/logo'
 import AuthHead from './cmpnt/authHead'
 import AuthDesc from './cmpnt/authDesc'
 import ButtonDesc from './cmpnt/buttonDesc'
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { userLogin } from '../../../../store/storeIndex'
+import { useNavigate } from 'react-router-dom'
+
 import "./cmpnt.css"
 
 const loginSchema = Yup.object().shape({
@@ -27,43 +32,59 @@ const loginSchema = Yup.object().shape({
 })
 
 const initialValues = {
-  email: 'admin@demo.com',
-  password: 'demo',
+  email: '',
+  password: '',
 }
 
-/*
-  Formik+YUP+Typescript:
-  https://jaredpalmer.com/formik/docs/tutorial#getfieldprops
-  https://medium.com/@maurice.de.beijer/yup-validation-and-typescript-and-formik-6c342578a20e
-*/
+
 
 export function Login() {
   const [loading, setLoading] = useState(false)
   const { saveAuth, setCurrentUser } = useAuth()
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues,
     validationSchema: loginSchema,
-    onSubmit: async (values, { setStatus, setSubmitting }) => {
-      setLoading(true)
-      try {
-        const { data: auth } = await login(values.email, values.password)
-        saveAuth(auth)
-        const { data: user } = await getUserByToken(auth.api_token)
-        setCurrentUser(user)
-      } catch (error) {
-        console.error(error)
-        saveAuth(undefined)
-        setStatus('The login details are incorrect')
-        setSubmitting(false)
-        setLoading(false)
-      }
+    onSubmit: async (values, {setStatus, setSubmitting}) => {
+      // setLoading(true)
+      // try {
+      //   const {data: auth} = await login(values.email, values.password)
+      //   saveAuth(auth)
+      //   const {data: user} = await getUserByToken(auth.api_token)
+      //   setCurrentUser(user)
+      // } catch (error) {
+      //   console.error(error)
+      //   saveAuth(undefined)
+      //   setStatus('The login details are incorrect')
+      //   setSubmitting(false)
+      //   setLoading(false)
+      // }
+      const data = {
+        email: values.email,
+        password: values.password
+    }
+      dispatch(userLogin(data, navigate))
     },
   })
-  function changeType() {
 
-  }
-  return (
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios.post('api/v1/users/login', { email, password })
+      .then((response) => {
+        // Handle successful login here
+      })
+      .catch((error) => {
+        // Handle login error here
+      });
+  };
+
+return (
     <form
       className='form w-100'
       onSubmit={formik.handleSubmit}
@@ -74,33 +95,58 @@ export function Login() {
 
       <div className="row">
         <div className="sm:!pl-36 pr-10 pl-10">
-          <Logo />
-          <div className="pt-32">
-            <AuthHead text1="Welcome " text2="Back!" />
-            <AuthDesc desc="Login to your account" />
+            <Logo />
+            <div className="pt-32">
+              <AuthHead text1="Welcome " text2="Back!" />
+              <AuthDesc desc="Login to your account" />
+            </div>
+            <div className="input sm:pr-[140px] relative">
+             
+      <div className='fv-row '>
+        <input
+          placeholder='Email'
+          {...formik.getFieldProps('email')}
+          className={clsx(
+            'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
+            {'is-invalid': formik.touched.email && formik.errors.email},
+            {
+              'is-valid': formik.touched.email && !formik.errors.email,
+            }
+          )}
+          type='email'
+          name='email'
+          autoComplete='off'
+          value={email}
+        />
+        {formik.touched.email && formik.errors.email && (
+          <div className='fv-plugins-message-container'>
+            <span role='alert'>{formik.errors.email}</span>
           </div>
-          <div className="input sm:pr-[140px] relative">
-
-            <div className='fv-row '>
-              <input
-                placeholder='Email'
-                {...formik.getFieldProps('email')}
-                className={clsx(
-                  'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
-                  { 'is-invalid': formik.touched.email && formik.errors.email },
-                  {
-                    'is-valid': formik.touched.email && !formik.errors.email,
-                  }
-                )}
-                type='email'
-                name='email'
-                autoComplete='off'
-              />
-              {formik.touched.email && formik.errors.email && (
-                <div className='fv-plugins-message-container'>
-                  <span role='alert'>{formik.errors.email}</span>
-                </div>
-              )}
+        )}
+      </div>
+             
+        <div className='mb-3'>
+        <input
+          type='password'
+          placeholder='Password'
+          autoComplete='off'
+          {...formik.getFieldProps('password')}
+          className={clsx(
+            'form-control w-100 border-2 border-solid !border-[#7D8695] h-14 rounded-lg inputText mb-4 bg-transparent',
+            {
+              'is-invalid': formik.touched.password && formik.errors.password,
+            },
+            {
+              'is-valid': formik.touched.password && !formik.errors.password,
+            }
+          )}
+          name='password'
+          value={password}
+        />
+        {formik.touched.password && formik.errors.password && (
+          <div className='fv-plugins-message-container'>
+            <div className='fv-help-block'>
+              <span role='alert'>{formik.errors.password}</span>
             </div>
 
             <div className='mb-3'>

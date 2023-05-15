@@ -12,9 +12,10 @@ type Props = {
   btndata: string
   progress: string
   textdata:string
+  id: string
 }
 
-const DropDown: React.FC<Props> = ({className, color, image, title, btndata,textdata, progress}) => {
+const DropDown: React.FC<Props> = ({className, color, image, title, btndata,textdata, progress, id}) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -26,9 +27,9 @@ const DropDown: React.FC<Props> = ({className, color, image, title, btndata,text
         <div className=" flex justify-start pb-4 bg-transparent"  ref={dropdownRef}>
           <button
            onClick={() => setIsOpen(!isOpen)}
-            className=" w-full border-2 border-solid  !border-[#7D8695] rounded-lg px-5 h-14 text-center flex justify-between items-center"
+            className=" w-full !border border-solid  rounded-lg px-5 h-18 text-center flex justify-between items-center"
             type="button"
-            id="dropDown"
+            id={id}
           >
            <span  className="text-[#9A9AB0] ml-6">{title}</span>  
             <svg
